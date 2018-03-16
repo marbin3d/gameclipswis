@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 16, 2018 at 03:44 AM
+-- Generation Time: Mar 16, 2018 at 08:27 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -25,18 +25,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `favourites`
---
-
-CREATE TABLE `favourites` (
-  `idFavourites` int(11) NOT NULL,
-  `userID` int(11) NOT NULL,
-  `videoID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -54,8 +42,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `FName`, `LName`, `email`, `password`, `language`) VALUES
-(1, 'jack', '', '', '', ''),
-(2, 'Sofia', '', '', '', '');
+(1, 'jack', 'yy', 'yyy', 'yyy', 'yyy'),
+(2, 'Sofia', 'mmm', 'mmm', 'mmm', 'mmm');
 
 -- --------------------------------------------------------
 
@@ -69,6 +57,13 @@ CREATE TABLE `uservideo` (
   `videoID` int(11) NOT NULL,
   `rating` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `uservideo`
+--
+
+INSERT INTO `uservideo` (`uservideoID`, `userID`, `videoID`, `rating`) VALUES
+(1, 2, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -85,20 +80,20 @@ CREATE TABLE `videos` (
   `ageRange` varchar(255) NOT NULL,
   `description` text NOT NULL,
   `dateUpload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `views` int(11) NOT NULL
+  `views` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`videoID`, `source`, `title`, `category`, `language`, `ageRange`, `description`, `dateUpload`, `views`, `email`) VALUES
+(1, 'jjj', 'jjjj', 'jjj', 'jjj', 'kkkk', '', '2018-03-16 07:26:12', 0, '');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `favourites`
---
-ALTER TABLE `favourites`
-  ADD PRIMARY KEY (`idFavourites`),
-  ADD KEY `userID` (`userID`),
-  ADD KEY `videoID` (`videoID`);
 
 --
 -- Indexes for table `users`
@@ -125,12 +120,6 @@ ALTER TABLE `videos`
 --
 
 --
--- AUTO_INCREMENT for table `favourites`
---
-ALTER TABLE `favourites`
-  MODIFY `idFavourites` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -140,13 +129,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `uservideo`
 --
 ALTER TABLE `uservideo`
-  MODIFY `uservideoID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `uservideoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `videoID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `videoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
