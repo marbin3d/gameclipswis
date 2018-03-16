@@ -1,0 +1,87 @@
+
+/*game panel backgroud*/
+
+
+.button-wrapper{
+    margin-bottom:30px;
+}
+
+.backgroundcolor{
+	background-color:#4fb9d0 !important;
+     
+    
+}
+
+
+/* customise color backgrounds*/
+.navbar-inverse {
+  /*background-color: #629749 !important;*/    
+  background-color: orangered !important;
+    
+  border-color: #ffffff!important;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #ffffff!important;
+}
+
+.navbar-brand {
+    font-size:25px!important;
+}
+
+.top-nav>li>a {
+    color: #ffffff!important;
+}
+
+.side-nav {
+    /*background-color: #629749 !important;*/
+     background-color: orangered !important;
+  
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff!important;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #ffffff!important;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #ffffff!important;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    border-color: #ffffff!important;
+	background-color: transparent!important;
+}
+
+.top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover, .top-nav>.open>a:focus {
+   /*background-color: #2e7d32!important;*/
+    background-color: orange !important; 
+    
+ 
+}
+
+.side-nav>li>a:hover, .side-nav>li>a:focus, .side-nav>.open>a, .side-nav>.open>a:hover, .side-nav>.open>a:focus {
+    /*background-color: #2e7d32!important;*/
+    background-color: orange !important;
+
+}
+
+.loginAndsignup .modal-dialog{max-width: 400px; width: 100%;}
+
+.othertop{margin-top:10px;}
+
+.list-content{
+ min-height:300px;
+}
+.break{
+    width:100%;
+    margin:20px;
+}
+
+
+
+
+
