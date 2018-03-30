@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2018 at 04:35 AM
+-- Generation Time: Mar 30, 2018 at 08:23 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -32,7 +32,7 @@ CREATE TABLE `comments` (
   `postID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
   `videoID` int(11) NOT NULL,
-  `comment` int(11) NOT NULL,
+  `comment` int(11) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
@@ -59,6 +59,7 @@ CREATE TABLE `users` (
   `FName` varchar(255) NOT NULL,
   `LName` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -67,9 +68,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userID`, `FName`, `LName`, `email`, `password`, `language`) VALUES
-(1, 'jack', 'yy', 'yyy', 'yyy', 'yyy'),
-(2, 'Sofia', 'mmm', 'mmm', 'mmm', 'mmm');
+INSERT INTO `users` (`userID`, `FName`, `LName`, `email`, `username`, `password`, `language`) VALUES
+(3, 'marbin', 'sarria', 'marbin3d@hotmail.com', 'marbingames', '123456', 'spanish'),
+(2, 'Sofia', 'mmm', 'mmm', '', 'mmm', 'mmm');
 
 -- --------------------------------------------------------
 
@@ -92,12 +93,12 @@ CREATE TABLE `uservideo` (
 
 CREATE TABLE `videos` (
   `videoID` int(11) NOT NULL,
-  `source` varchar(255) NOT NULL,
+  `source` varchar(255) DEFAULT NULL,
   `title` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `language` varchar(255) NOT NULL,
   `ageRange` varchar(255) NOT NULL,
-  `description` text NOT NULL,
+  `description` text,
   `dateUpload` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `views` int(11) NOT NULL,
   `email` varchar(255) NOT NULL
@@ -108,7 +109,10 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`videoID`, `source`, `title`, `category`, `language`, `ageRange`, `description`, `dateUpload`, `views`, `email`) VALUES
-(1, 'jjj', 'jjjj', 'jjj', 'jjj', 'kkkk', '', '2018-03-16 07:26:12', 0, '');
+(86, '../videoClips/videoGame2.mp4', 'yy', 'yyy', 'yy', '77', 'yy', '2018-03-18 09:58:06', 0, 'jackactive@hotmail.com'),
+(97, 'videoClips/video Sofia.mp4', 'video Sofia1', 'strategy', 'Spanish', '18-20', 'empires', '2018-03-20 00:35:06', 0, 'marbin3d@hotmail.com'),
+(96, 'videoClips/video Sofia.mp4', 'game msv', 'strategy', 'Chinesse', '20-22', 'game 3 test', '2018-03-19 11:50:06', 0, 'marbin3d@hotmail.com'),
+(87, 'videoClips/videoGame2.mp4', 'game2', 'strategy', 'English', '14-16', 'game video 2', '2018-03-18 10:11:04', 0, 'jackactive@hotmail.com');
 
 --
 -- Indexes for dumped tables
@@ -170,7 +174,7 @@ ALTER TABLE `favourite_clips`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `uservideo`
@@ -182,7 +186,7 @@ ALTER TABLE `uservideo`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `videoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `videoID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
