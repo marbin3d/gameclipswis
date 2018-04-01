@@ -82,6 +82,34 @@
 }
 
 
+.list-left{
+   
+    width:20%;
+    float:left;
+}
 
+.list-left img{
+    
+   width:100%;
+   padding:10px;
+    border:solid #ccc 1px;
+}
+.list-right{
+   
+    width:78%;
+    float:right;
+}
 
+#cTitle{
+color:red;
+
+}
+
+#mainpanecontentSearchByKeyWord li{
+
+   padding:10px;
+overflow: auto;
+    list-style: none;
+
+}
 
