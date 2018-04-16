@@ -382,6 +382,40 @@ if(isset($_SESSION['source'])){
                                         </div>
 
                                     </div>
+                                    
+                                    
+                                    
+                                     <!-- recommender feature in progress-->
+                                    <div class="row" align="center">
+                                        <div class="col-md-3 col-lg-3" align="center">
+
+                                            <form method="POST" id="formRecommend" action="#">
+                                                <!-- this input need a temporal value to start-->
+                                                <input id="fieldQ1Rec" name="question1Rec" type="text" placeholder="Number of recommendations" />
+
+                                            </form>
+
+
+                                        </div>
+                                        
+                                        <hr>
+
+                                        <div class="col-md-10 col-lg-10" align="center">
+                                            <div class="col-md-6 col-lg-6" align="center">
+                                                <button type="button" id="recommendBtn" class="btn btn-success">Update Recommender</button>
+                                            </div>
+                                            
+                                            <div class="col-md-6 col-lg-6" align="center">
+                                                <div id="responsePrediction">clips recommended                          
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            
+                                        </div>
+
+                                    </div>  <!-- end recommender feature in progress-->
+        
 
 
                                     <!-- from DB-->
