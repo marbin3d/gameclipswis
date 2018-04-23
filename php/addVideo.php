@@ -8,7 +8,6 @@
   NB. php on server side. increase php.ini memory limit to 1024M and max post upload 50M, upload 50M
 */
 
-
 // Create connection
 //$conn = new mysqli($host, $username, $password,$database);
 //$conn=mysqli_connect($host,$usernameC,$passwordC,$database);
@@ -35,7 +34,6 @@ $email=$_POST["email"];
 
 
 /*Source video selection*/
-
 /*$sourceVideoURL= $_POST["sourceVideoURL"];*/
 /*$sourceVideoLocal= $_POST["sourceVideo"];*/
  
@@ -53,7 +51,6 @@ $sourceVideo=$sourceVideoURL;
 
 /*$sourceVideo="videosource1";*/
 
-
 $title=$_POST["title"];
 $category=$_POST["category"];
 $language=$_POST["language"];
@@ -61,18 +58,20 @@ $description=$_POST["description"];
 $ageRange=$_POST["ageRange"];
 
 
-
-
   /*retrieve source video content and pass to local storage on server side*/
-if(isset($_POST) && !empty($_FILES['sourceVideo']['name'])){     
+if(isset($_POST) && !empty($_FILES['sourceVideo']['name'])){  
+    
  $name = $_FILES['sourceVideo']['name'];
+    
  list($txt, $ext) = explode(".", $name);
 // $video_name = time().".".$ext;
     // $video_timeUpload = time();
     
- $video_name = $txt.".".$ext;
+ $video_name = $txt.".".$ext; 
+
+//store file input in temp
+ $tmp = $_FILES['sourceVideo']['tmp_name']; 
     
- $tmp = $_FILES['sourceVideo']['tmp_name'];   
  $localPathTosave='../videoClips/'.$video_name;  
 }
 
@@ -131,6 +130,7 @@ if(mysqli_query($con,$sqlAddVideo)){
                
                  //update path video if there is a selected video 
                $localPathTosave2DB=str_replace("../","",$localPathTosave);
+               
                $updateVideoPath= "UPDATE videos SET source='$localPathTosave2DB' WHERE email='$email' ";
                mysqli_query($con,$updateVideoPath); 
                            
@@ -143,9 +143,9 @@ if(mysqli_query($con,$sqlAddVideo)){
                </SCRIPT>
                <NOSCRIPT>
                    <a href='$url'>video uploading failed, please verify the size less than 50 MB. Click here if you are not redirected.</a>
-               </NOSCRIPT>");               
-               
+               </NOSCRIPT>"); 
            }
+            
         }else{
            //echo "Please select video";
             echo ("<SCRIPT LANGUAGE='JavaScript'>

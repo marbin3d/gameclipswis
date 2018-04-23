@@ -68,115 +68,81 @@ $fnameUserActive="General User";
 
 
     <div id="wrapper">
-        <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.php">Game Clips</a>
-                <a class="navbar-brand">Creator Page</a>
+                <!-- Navigation -->
+                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.php">Game Clips</a>
+                        <a class="navbar-brand">Visitor</a>
 
 
-            </div>
+                    </div>
 
-            <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav ">
+                    <!-- Top Menu Items -->
+                    <ul class="nav navbar-right top-nav ">
 
-                <li>
-                    <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
-                </li>
-
-                <li>
-                    <a href="dashboardCreator.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
-                </li>
-
-                <li>
-                    <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>About</a>
-                </li>
-
-                <li>
-                    <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>Help </a>
-                </li>
-                
-                 <li> 
-                  <a href="#">"<?php echo $fnameUserActive; ?>"</a>                                  
-                 </li>
-                            
-                            
-                
-               
-
-                <!-- drop down Recent Clips added by members-->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Sean Gamer</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> added at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> added at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-
-                        <li class="message-footer">
-                            <a href="#">Read All latest Clips</a>
-                        </li>
-                    </ul>
-                </li>
-                <!-- End Top Menu Items -->
-
-
-
-                <!-- drop down Active User-->
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="creatorFullName"><i class="fa fa-user"></i> "<?php echo $fnameUserActive; ?>" <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                    
-                    
-                      <!--active user email-->
-                         <li>
-                           <a href="#" id="activeEmail" ><?php echo $emailUserActive; ?></a>
-                         </li>
-                         
-
-
-                        <li class="divider"></li>
                         <li>
-                            <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
+                        </li>
+
+                        <li>
+                            <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
+                        </li>
+
+                        <li>
+                            <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>About</a>
+                        </li>
+
+                        <li>
+                            <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>Help </a>
+                        </li>
+
+
+
+                        <li class="button-wrapper">
+                            <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
+                        </li>
+
+
+                       
+                        <!--Login -->
+                        <li class="button-wrapper">
+                            <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
+                        </li>
+                        
+                         <!--Retrieve active user--> 
+                        <!--
+                         <li>
+                            <a href="#" id="activeUser" class=" btn-md "><?php echo $fnameUserActive; ?></a>
+                        </li>
+                        -->
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+                                <!--active user email-->
+                                <li>
+                                    <a href="#" id="activeEmail">
+                                        <?php echo $emailUserActive; ?>
+                                    </a>
+                                </li>
+
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                </li>
 
-
-            </ul>
 
 
            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -394,13 +360,10 @@ $fnameUserActive="General User";
                                                 <img src="images/defaultGamePlay.png" id="photo" class="img-responsive img-thumbnail">
                                             </div>
                                             local source:
-                                            <div class="input-group" col-md-9>
-                                               
-                                                <!-- Clip file to upload-->
-                                                
+                                            <div class="input-group" col-md-9>                                               
+                                                <!-- Clip file to upload-->                                                
                                                 <input type="file" name="sourceVideo" id="videoSelected" >
-                                                <p class="help-block">Only mpeg, mp4,avi file max size:50 MB</p>
-                                             
+                                                <p class="help-block">Only mpeg, mp4,avi file max size:50 MB</p>  
                                                 
                                             </div>                                       
                                         </div>
@@ -479,13 +442,6 @@ $fnameUserActive="General User";
 
 
 
-
-
-
-
-
-
-   
 
     <!-- end MODALS definitions-->
 

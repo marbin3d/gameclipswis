@@ -55,12 +55,8 @@ function retrieveVideos(emailUsrActive) {
                      var dateUploadVideo =  value[m].videoDateUpload;
                      var categoryVideo =  value[m].category;
                     
-                 
-                    
                     var videoId = value[m].videoID;
                     var itemListID = videoId  + "";
-                    
-                    
                     
                  // console.log(value[m].userID);
                     console.log(videoTitle);
@@ -137,10 +133,9 @@ $(document).ready(function () {
     /*load Videos in Home*/
      retrieveVideos(emailUser);
     
-    
-    
-    
         
+    
+    /*
     //////Function Recommend//////////////////////////////////////
     $("#recommendBtnxxx").click(function (e) {
 
@@ -213,10 +208,7 @@ $(document).ready(function () {
                          var test="86";
                          
                          retrieveVideosRecommended(test);
-                         
-                       
-                      
-                         
+                          
                          //////////////////////
                          
                      }
@@ -234,14 +226,15 @@ $(document).ready(function () {
        
   
     });
-    ///////////////////////end POST recommend
+    ///////////////////////end POST recommend    
+    */
         
     
+    
+    
     //////////NEW RECOMMENDER CODE
-    
-    
-    
-     //with AJAX  WORKS ////////////////////////////////////////////////////////////////////
+        
+     //with AJAX  WORKS ///////////////////////////////////////////////////////////////////////////////////
 
     $('#recommendBtn').click(function (e) {
 
@@ -276,8 +269,7 @@ $(document).ready(function () {
                           text: element)
                       }));
                       */
-
-
+                    
                     //retrive each video info
                     for (m in val) {
 
@@ -321,25 +313,13 @@ $(document).ready(function () {
     //end  AJAX  WORKS ////
 
     
-    
-    
-    
-    
-    
     /////////////// END NEW RECOMMENDER CODE
     
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-     //////Function Recommend
+     //////Function Recommend hover
    $("#recommendBtn").hover(function () {
         
      $(this).css({'background-color':'purple','font-size':'16px', 'color':'white','cursor':'pointer'});    
@@ -348,23 +328,7 @@ $(document).ready(function () {
     ///////////////////////////
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        
     
     
     

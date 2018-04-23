@@ -10,6 +10,12 @@
 //retrieve user active from View
 
 var fnameUser  = document.getElementById('creatorFullName').text ;
+
+if(typeof(fnameUser)=="undefined"){
+
+fnameUser="guest";
+}
+
 var emailUser  = document.getElementById('activeEmail').text;
 
 //console.log(emailUser);
@@ -18,10 +24,8 @@ console.log(fnameUser);
 
 //load videos available in the platform for general user or active user videos 
 
-function retrieveVideos(emailUsrActive) {
+function retrieveVideos(emailUsrActive) {   
     
-  
-
     var rpReqUrl = "php/loadVideos.php";
 
     $.post(rpReqUrl,
@@ -140,11 +144,15 @@ $(document).ready(function () {
     //Load preview Profile image before submision  with validation
     //works
     $('#videoSelected').change(function () {
-        //alert('This file size is: ' + this.files[0].size/1024/1024 + "MB");
+        
+        
+       // alert('This file size is: ' + this.files[0].size/1024/1024 + " MB");
 
-        //validate if file less than 1 MB
-        //if (this.files[0].size / 1024 / 1024 <= 1) {
-         if (this.files[0].size / 50000 / 50000 <= 1) {
+        //validate if file less than 50 MB
+        
+         if (this.files[0].size/1024/1024 <50) {
+                       
+             
             //read Object local file    
             var objFileReader = new FileReader();
             objFileReader.readAsDataURL(document.getElementById("videoSelected").files[0]);

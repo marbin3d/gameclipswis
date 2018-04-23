@@ -16,7 +16,9 @@
 /* customise color backgrounds*/
 .navbar-inverse {
   /*background-color: #629749 !important;*/    
-  background-color: orangered !important;
+ /* background-color: orangered !important;*/
+    
+ background-color: darkred !important;
     
   border-color: #ffffff!important;
 }
@@ -33,9 +35,16 @@
     color: #ffffff!important;
 }
 
+
+/*side bar*/
 .side-nav {
     /*background-color: #629749 !important;*/
-     background-color: orangered !important;
+     /*background-color: orangered !important;*/
+    
+    /*background-color: darkred !important;*/
+    
+    background-color: rgb (230,25,200)!important;
+    	
   
 }
 
@@ -56,9 +65,14 @@
 	background-color: transparent!important;
 }
 
+
+/*menus hover*/
 .top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover, .top-nav>.open>a:focus {
    /*background-color: #2e7d32!important;*/
-    background-color: orange !important; 
+ /* background-color: orange !important; */
+     background-color: rgb(250,72,100) !important;
+    
+    font-size: 15px;
     
  
 }
@@ -66,6 +80,9 @@
 .side-nav>li>a:hover, .side-nav>li>a:focus, .side-nav>.open>a, .side-nav>.open>a:hover, .side-nav>.open>a:focus {
     /*background-color: #2e7d32!important;*/
     background-color: orange !important;
+    
+   
+    
 
 }
 
@@ -106,9 +123,10 @@ color:red;
 }
 
 #mainpanecontentSearchByKeyWord li{
-
+top:20px;
+   
    padding:10px;
-overflow: auto;
+  overflow: auto;
     list-style: none;
 
 }

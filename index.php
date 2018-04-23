@@ -60,9 +60,6 @@ if(isset($_SESSION['source'])){
             <!-- Bootstrap Core JavaScript 
              <script src="https://apis.google.com/js/api.js"></script>-->
              
-          
-             
-              
 
         </head>
 
@@ -107,64 +104,22 @@ if(isset($_SESSION['source'])){
 
 
                         <li class="button-wrapper">
-                            <button type="button" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</button>
+                            <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
                         </li>
 
 
-                        <!--retrieve active user-->
-                        <li>
-                            <a href="#" id="activeUser">"<?php echo $fnameUserActive; ?>"</a>
-                        </li>
-
-
+                       
+                        <!--Login -->
                         <li class="button-wrapper">
-                            <button type="button" class="btn btn-alert btn-md" data-toggle="modal" data-target="#loginUser">Login</button>
+                            <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
                         </li>
-
-
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                            <ul class="dropdown-menu message-dropdown">
-                                <li class="message-preview">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                            <div class="media-body">
-                                                <h5 class="media-heading"><strong>Jack Gamer2</strong>
-                                        </h5>
-                                                <p class="small text-muted"><i class="fa fa-clock-o"></i> added at 4:32 PM</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li class="message-preview">
-                                    <a href="#">
-                                        <div class="media">
-                                            <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                            <div class="media-body">
-                                                <h5 class="media-heading"><strong>John Smith</strong>
-                                        </h5>
-                                                <p class="small text-muted"><i class="fa fa-clock-o"></i> added at 4:32 PM</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </li>
-
-
-
-                                <li class="message-footer">
-                                    <a href="#">Read All latest Clips</a>
-                                </li>
-                            </ul>
+                        
+                         <!--Retrieve active user--> 
+                        <!--
+                         <li>
+                            <a href="#" id="activeUser" class=" btn-md "><?php echo $fnameUserActive; ?></a>
                         </li>
-
-
+                        -->
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
@@ -177,17 +132,13 @@ if(isset($_SESSION['source'])){
                                     </a>
                                 </li>
 
-
                                 <li class="divider"></li>
-
 
                                 <li>
                                     <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                                 </li>
                             </ul>
                         </li>
-
-
                     </ul>
 
 
@@ -530,8 +481,6 @@ if(isset($_SESSION['source'])){
                     </div>
                 </div>
                 <!-- end AddUser -->
-
-
 
 
                 <!-- LoginUser Modal -->

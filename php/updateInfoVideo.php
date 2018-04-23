@@ -18,8 +18,6 @@ $sourceVideo= $_POST['sourceVideo'];
 $title=$_POST["title"];
 $category=$_POST["category"];
 $language=$_POST["language"];
-
-
 $description=$_POST["description"];
 
 
