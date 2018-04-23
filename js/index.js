@@ -21,8 +21,7 @@ console.log(fnameUser);
 
 //load videos available in the platform for general user or active user videos 
 
-function retrieveVideos(emailUsrActive) {    
-  
+function retrieveVideos(emailUsrActive) { 
 
     var rpReqUrl = "php/loadVideos.php";
 

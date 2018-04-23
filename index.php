@@ -115,14 +115,15 @@ if(isset($_SESSION['source'])){
                         </li>
                         
                          <!--Retrieve active user--> 
-                        <!--
+                      
                          <li>
                             <a href="#" id="activeUser" class=" btn-md "><?php echo $fnameUserActive; ?></a>
                         </li>
-                        -->
-
+                        
+                        
+                        <!--active user-->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                            <a href="#"  class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
 
                                 <!--active user email-->
@@ -139,6 +140,8 @@ if(isset($_SESSION['source'])){
                                 </li>
                             </ul>
                         </li>
+                        
+                        
                     </ul>
 
 

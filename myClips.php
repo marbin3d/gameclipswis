@@ -67,81 +67,78 @@ $fnameUserActive="General User";
 <body>
 
 
-    <div id="wrapper">
-                <!-- Navigation -->
-                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="index.php">Game Clips</a>
-                        <a class="navbar-brand">Visitor</a>
+   <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php">Game Clips</a>
+                <a class="navbar-brand">Creator Page</a>
 
 
-                    </div>
+            </div>
+            
+        
 
-                    <!-- Top Menu Items -->
-                    <ul class="nav navbar-right top-nav ">
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav ">
 
-                        <li>
-                            <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
-                        </li>
+                <li>
+                    <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
+                </li>
 
-                        <li>
-                            <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
-                        </li>
+                <li>
+                    <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
+                </li>
 
-                        <li>
-                            <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>About</a>
-                        </li>
+                <li>
+                    <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>About</a>
+                </li>
 
-                        <li>
-                            <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>Help </a>
-                        </li>
-
-
-
-                        <li class="button-wrapper">
-                            <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
-                        </li>
+                <li>
+                    <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>Help </a>
+                </li>
+                
+                
+    
+                <!-- End Top Menu Items -->
 
 
-                       
-                        <!--Login -->
-                        <li class="button-wrapper">
-                            <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
-                        </li>
-                        
-                         <!--Retrieve active user--> 
-                        <!--
+                <!-- drop down Active User-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="creatorFullName"><i class="fa fa-user"></i> <?php echo $fnameUserActive; ?> </a>
+                    <ul class="dropdown-menu">
+                      <!--active user email-->
                          <li>
-                            <a href="#" id="activeUser" class=" btn-md "><?php echo $fnameUserActive; ?></a>
-                        </li>
-                        -->
+                           <a href="#" id="activeEmail" ><?php echo $emailUserActive; ?></a>
+                         </li>
 
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-
-                                <!--active user email-->
-                                <li>
-                                    <a href="#" id="activeEmail">
-                                        <?php echo $emailUserActive; ?>
-                                    </a>
-                                </li>
-
-                                <li class="divider"></li>
-
-                                <li>
-                                    <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                                </li>
-                            </ul>
-                        </li>
+                        <li class="divider"></li>
+                        
+                       
                     </ul>
+                     <li>
+                            <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                </li>
+                
+                
+                
+             
+
+
+            </ul>
+
+
+
+    
+
 
 
 
@@ -251,8 +248,6 @@ $fnameUserActive="General User";
         <!--start page-wraper for added videosby active user-->
 
         <div id="page-wrapper">
-
-
             <div class="container bootstrap snippet">
 
                 <div class="header">
@@ -265,9 +260,7 @@ $fnameUserActive="General User";
 
 
                 <div class="jumbotron  list-content">
-                   
-                   
-                   
+                                      
                     <!-- List of Clips added by Active user-->
                     <ul class="list-group">
 
@@ -278,10 +271,8 @@ $fnameUserActive="General User";
                          <span id="mainpanecontent"> </span>
                         </div>
                         
-                        
-                        
-                        <!-- Clips to be added from DB-->
-                       
+                                                
+                        <!-- Clips to be added from DB-->                       
                         <div>  All clips
                         <span id="mainpanecontentSearch">	
                             </span>
@@ -444,9 +435,6 @@ $fnameUserActive="General User";
 
 
     <!-- end MODALS definitions-->
-
-
-
 
       
 <script src="js/myClips.js"></script>
