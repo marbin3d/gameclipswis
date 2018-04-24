@@ -131,3 +131,10 @@ top:20px;
 
 }
 
+#addClip,#showFavourites{
+    position: relative !important;
+    top:10px;
+padding: 10px !important;
+
+}
+

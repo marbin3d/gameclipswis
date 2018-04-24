@@ -18,7 +18,7 @@ if ($con->connect_error) {
 }
 
 
-$email= $_POST["userEmail"];
+$email=$_POST["userEmail"];
 
 //test
 //$email="no email defined";
@@ -26,7 +26,7 @@ $email= $_POST["userEmail"];
 //to go back and local path
 //$url = "https://infs3202-c562e525.uqcloud.net/game-clips-wis/myClips.php"; 
 
-$url = "../index.php"; 
+$url = "../myClips.php"; 
 
 if ($email !=="no email defined") {
  

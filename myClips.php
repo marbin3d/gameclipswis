@@ -217,16 +217,16 @@ $fnameUserActive="General User";
                             <div class="text-left">
 
                                 <div class="button-wrapper">
-                                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#AddClip">Add new Clip</button>
+                                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip">Add new Clip</button>
                                 </div>
 
                             </div>
 
                         </div>
                         <div class="col-md-2">
-
+                           
                             <div class="button-wrapper">
-                                <button type="button" class="btn btn-success btn-lg" id="showFavourites">Show Favourites</button>
+                                <button type="button" class="btn btn-success btn-md" id="showFavourites">Show Favourites</button>
 
                             </div>
                             <div class="clearfix"></div>

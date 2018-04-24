@@ -22,7 +22,7 @@ console.log(fnameUser);
 
 function retrieveVideos(emailUsrActive) {   
     
-    var rpReqUrl = "php/loadVideos.php";
+    var rpReqUrl = "../php/loadVideosMyClips.php";
 
     $.post(rpReqUrl,
 
@@ -46,7 +46,7 @@ function retrieveVideos(emailUsrActive) {
 
                    // var usrId = value[m].userID;
                     var videoTitle = value[m].title;                   
-                    var sourceVideo = value[m].sourceLinkVideo; 
+                    var sourceVideo = value[m].sourceLinkVideo+"?autoplay=0"; 
                     var viewsVideo =  value[m].views;
                     
                     var videoUploadByAuthor =  value[m].videoUploadBy;
@@ -110,8 +110,8 @@ function retrieveVideos(emailUsrActive) {
                     
                   
                       
-                      var videoIn = document.getElementById(videoId+"");
-                       videoIn.pause();
+                     /* var videoIn = document.getElementById(videoId+"");
+                       videoIn.pause();*/
                                         
 
                     $('#mainpanecontentSearch').prepend(itemVideo);
@@ -149,9 +149,9 @@ $(document).ready(function () {
         
        // alert('This file size is: ' + this.files[0].size/1024/1024 + " MB");
 
-        //validate if file less than 50 MB
+        //validate if file less than 850 MB
         
-         if (this.files[0].size/1024/1024 <50) {
+         if (this.files[0].size/1024/1024 <850) {
                        
              
             //read Object local file    
@@ -168,7 +168,7 @@ $(document).ready(function () {
         } else {
 
             $('#videoSelected').val('');
-            alert('Please, verify video. It must be less than 50 MB');
+            alert('Please, verify video. It must be less than 850 MB');
 
         }
 

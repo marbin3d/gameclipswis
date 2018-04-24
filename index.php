@@ -24,7 +24,7 @@ if(isset($_SESSION['source'])){
 ?>
 
     <?php  if($loadedCheck){ 
-           $sourceVid=$_SESSION['source'];
+           $sourceVid=$_SESSION['source']. '?rel=0';
                  }
  ?>
 
@@ -77,7 +77,11 @@ if(isset($_SESSION['source'])){
                             <span class="icon-bar"></span>
                         </button>
                         <a class="navbar-brand" href="index.php">Game Clips</a>
-                        <a class="navbar-brand">Visitor</a>
+                        <a class="navbar-brand" id="activeUser" ><?php echo $fnameUserActive; ?></a>
+                        
+                         <!--Retrieve active user--> 
+                      
+                        
 
 
                     </div>
@@ -102,7 +106,6 @@ if(isset($_SESSION['source'])){
                         </li>
 
 
-
                         <li class="button-wrapper">
                             <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
                         </li>
@@ -114,11 +117,7 @@ if(isset($_SESSION['source'])){
                             <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
                         </li>
                         
-                         <!--Retrieve active user--> 
-                      
-                         <li>
-                            <a href="#" id="activeUser" class=" btn-md "><?php echo $fnameUserActive; ?></a>
-                        </li>
+                        
                         
                         
                         <!--active user-->
@@ -129,7 +128,7 @@ if(isset($_SESSION['source'])){
                                 <!--active user email-->
                                 <li>
                                     <a href="#" id="activeEmail">
-                                        <?php echo $emailUserActive; ?>
+                                        "<?php echo $emailUserActive; ?>"
                                     </a>
                                 </li>
 

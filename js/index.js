@@ -16,21 +16,30 @@ var fnameUser  = document.getElementById('creatorFullName').text ;
 var emailUser  = document.getElementById('activeEmail').text;
 
 //console.log(emailUser);
-console.log(fnameUser);
+//console.log(fnameUser);
 
 
 //load videos available in the platform for general user or active user videos 
 
 function retrieveVideos(emailUsrActive) { 
+    
+   
 
-    var rpReqUrl = "php/loadVideos.php";
-
+    var rpReqUrl = "../php/loadVideos.php";
+    
+    
+     console.log("email user active: "+emailUsrActive);
     $.post(rpReqUrl,
 
         //data
         {
+        
+        
             //activeUser
-            userEmail: emailUsrActive
+            userEmail: emailUsrActive 
+        
+        
+            //userEmail: "no email defined" 
 
         },
 
@@ -47,7 +56,7 @@ function retrieveVideos(emailUsrActive) {
 
                    // var usrId = value[m].userID;
                     var videoTitle = value[m].title;                   
-                    var sourceVideo = value[m].sourceLinkVideo; 
+                    var sourceVideo = value[m].sourceLinkVideo+"?autoplay=0"; 
                     var viewsVideo =  value[m].views;
                     
                     var videoUploadByAuthor =  value[m].videoUploadBy;
@@ -87,6 +96,7 @@ function retrieveVideos(emailUsrActive) {
                     
                       var dateVideo = dateUploadVideo;
                     
+                    /*container definition*/                    
                       var videoFrame = ' <div class="col-xs-10" class="embed-responsive embed-responsive-16by9">                                <iframe class="embed-responsive-item" src= '+sourceVideo +' width="100%" height="100%"   frameborder="0" ></iframe> </div>';
                     
                     /*Thumbnail by default*/
@@ -127,10 +137,20 @@ alert("Please subscribe to enable more options!");
 
 
 //start JQuery
-$(document).ready(function () {    
+$(document).ready(function () {   
+    
+    
+    
+    
+    //var emailUserAct  = document.getElementById('activeEmail').innerHTML;
+    //var emailUserAct  =$("#activeEmail").text();    
+    var emailUserAct = "no email defined" ;
+    
+    console.log( emailUserAct);
+    
         
-    /*load Videos in Home*/
-     retrieveVideos(emailUser);
+    /*load Videos in Home for public*/
+     retrieveVideos(emailUserAct);
     
         
     
@@ -363,7 +383,7 @@ $(document).ready(function () {
 
                    // var usrId = value[m].userID;
                     var videoTitle = value[m].title;                   
-                    var sourceVideo = value[m].sourceLinkVideo; 
+                    var sourceVideo = value[m].sourceLinkVideo+"?autoplay=0"; 
                     var viewsVideo =  value[m].views;
                     
                     var videoUploadByAuthor =  value[m].videoUploadBy;
