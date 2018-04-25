@@ -43,7 +43,10 @@
     
     /*background-color: darkred !important;*/
     
+   
+    
     background-color: rgb (230,25,200)!important;
+       padding:5px !important;
     	
   
 }
@@ -81,7 +84,7 @@
     /*background-color: #2e7d32!important;*/
     background-color: orange !important;
     
-   
+ 
     
 
 }
@@ -123,7 +126,7 @@ color:red;
 }
 
 #mainpanecontentSearchByKeyWord li{
-top:20px;
+top:20px ;
    
    padding:10px;
   overflow: auto;

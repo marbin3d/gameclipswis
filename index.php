@@ -93,9 +93,7 @@ if(isset($_SESSION['source'])){
                             <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
                         </li>
 
-                        <li>
-                            <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
-                        </li>
+                        
 
                         <li>
                             <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>About</a>
@@ -147,10 +145,14 @@ if(isset($_SESSION['source'])){
 
                     <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
-                        <ul class="nav navbar-nav side-nav">
+                       
+                        
                         
 
                             <div class="col-md-10">
+                             
+                              <ul class="nav navbar-nav side-nav">
+                            
                                
                                <!-- Btn search by keyword from YouTube-->
                                      
@@ -163,9 +165,6 @@ if(isset($_SESSION['source'])){
                                     </div>     
                                       
                                
-                                <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
-                                    <fieldset>  
-
                                        <!-- Search by key word from Game Clips DB, etc -->
                                         <form action="searchWord()" id="searchYoutubeDB">
                                             <h4>Search Game Clips</h4>
@@ -181,6 +180,10 @@ if(isset($_SESSION['source'])){
                                             <button type="#" id="searchKeyWordBtnXXX">Search</button>
                                         </form>
                                         <hr />
+                            
+                                <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
+                                    <fieldset>  
+
                                         
                                       <!-- Search by key word from Game Clips by Title -->
                                         <li>
@@ -219,19 +222,25 @@ if(isset($_SESSION['source'])){
                                     </fieldset>
 
                                 </form>
-
-                            </div>
-
-                            <li>
+                                
+                                
+                                   <li>
                                  <!-- analyticsView.php -->
                                 <a href="#"><i class="fa fa-fw fa-power-off"></i> Analytics</a>
                             </li>
+                                
+                               
+                              </ul>
+                              
+                            </div>
 
-                        </ul>
+                         
 
+                       
+                         
                     </div>
                     <!-- /.navbar-collapse -->
-
+                    
 
                 </nav>
 
@@ -249,7 +258,7 @@ if(isset($_SESSION['source'])){
                                     
                                      <h3 class="text-muted prj-name">
 					       	<span class="fa fa-users fa-2x principal-title"></span>
-							Results Game Clips
+							Game Clips Gallery
 					      </h3>
 
                                     <!-- clips from DB-->
@@ -294,7 +303,7 @@ if(isset($_SESSION['source'])){
                                            
                                            <h3 class="text-muted prj-name">
 					       	<span class="fa fa-users fa-2x principal-title"></span>
-							Results YouTube
+							YouTube Results
 					      </h3>
                                
                                    
