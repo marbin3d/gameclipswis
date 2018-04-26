@@ -8,7 +8,7 @@
     <meta name="author" content="">
 
     <title>GAME CLIPS</title>
-
+    
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -19,7 +19,6 @@
 
     <!-- Custom Fonts 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
-
     
 	 <!-- jQuery -->
     <script src="js/jquery.js"></script>

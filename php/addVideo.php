@@ -5,7 +5,7 @@
    Sofia Elena & Marbin
   University of Queensland
   2018
-  NB. php on server side. increase php.ini memory limit to 1024M and max post upload 50M, upload 50M
+  NB. php on server side. increase php.ini memory limit to 1024M and max post upload 850M, upload 850M
 */
 
 // Create connection
@@ -108,8 +108,7 @@ if(mysqli_query($con,$sqlAddVideo)){
         //"informationUpdated" =>$infoUpdated,     
           "success" => true
          ); 
-    
-    
+        
             //video upload
         if(isset($_POST) && !empty($_FILES['sourceVideo']['name'])){          
             
