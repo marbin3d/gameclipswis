@@ -141,3 +141,40 @@ padding: 10px !important;
 
 }
 
+/*sTYLES sOFIA*/
+
+#welcomeModal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url("images/modalbackground.png");
+    background-repeat: no-repeat;
+    width:350px;
+    height: 400px;
+    border-radius: 10px;
+    border: none;
+    
+    
+    
+}
+
+
+    
+.closeWelcome{
+    margin: 10px;
+}
+
+.welcometext{
+    color: white;
+    font-family: 'Bangers', cursive; 
+    text-align: center;
+    margin-top: 60%;
+}
+
+.welcomecontent p{
+    text-align: center;
+    color: white;
+}
+
+/*end SOFIA*/

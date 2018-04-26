@@ -47,6 +47,7 @@ if(isset($_SESSION['source'])){
             <!-- Custom CSS -->
             <link href="css/sb-admin.css" rel="stylesheet">
             <link href="css/style.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
             <!-- Custom Fonts 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
@@ -544,6 +545,18 @@ if(isset($_SESSION['source'])){
                 </div>
                 <!-- end loginUser -->
                 
+            <!-- Modal Welcome by Sofia -->
+            <div class="modal fade" id="welcomeModal" role="dialog">
+              <button type="button" class="close closeWelcome" data-dismiss="modal">&times;</button>
+              <div class='welcomecontent'>
+                  <h3 class='welcometext'>Welcome to GameClips</h3>
+                  <p>A website dedicated to Video Games fans.</p>
+                  <p>Add your own videos, follow other gamers and like and save your favourite videos!</p>
+            </div>
+            <!-- END Modal Welcome by Sofia -->
+      
+    
+  </div>
                 
                 
                 
@@ -554,6 +567,7 @@ if(isset($_SESSION['source'])){
                 <script src="js/index.js"></script>
                 <script src="js/searchVideoByKeyWord.js"></script>
                 <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+                
                 
         </body>
         </html>

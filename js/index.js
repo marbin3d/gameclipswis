@@ -461,5 +461,17 @@ $(document).ready(function () {
     
     
     ///////////
+    //SOFIA
+        $(window).on('load',function(){
+        $('#welcomeModal').modal('show');
+            });
+
+    
+    
+    
+    
+    
+    
+    ///////////
     
     });
