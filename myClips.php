@@ -93,7 +93,7 @@ $fnameUserActive="General User";
                     <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
                 </li>
 
-                <li>
+                <li class="active">
                     <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
                 </li>
 

@@ -90,7 +90,7 @@ if(isset($_SESSION['source'])){
                     <!-- Top Menu Items -->
                     <ul class="nav navbar-right top-nav ">
 
-                        <li>
+                        <li class="active">
                             <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
                         </li>
 
