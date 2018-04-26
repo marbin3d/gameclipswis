@@ -1,0 +1,97 @@
+<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                    <div class="sidenavX" id="mySidenavX" >
+                       
+                        
+                            <!-- collapse navbar-collapse navbar-ex1-collapse -->                        
+
+                            <div class="col-md-10">
+                             
+                              <ul class="nav navbar-nav side-nav">
+                                  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                            
+                               
+                               <!-- Btn search by keyword from YouTube-->
+                                     
+                                     <div id="buttons">                                     
+                                      <label> 
+                                         <h4>Search YouTube</h4> 
+                                       <input id="query" value='cats' type="text"/>  
+                                          <button id="searchByWordBtn"  onclick="search()">Search</button>
+                                      </label>
+                                    </div>     
+                                      
+                               
+                                       <!-- Search by key word from Game Clips DB, etc -->
+                                        <form action="searchWord()" id="searchYoutubeDB">
+                                            <h4>Search Game Clips</h4>
+                                            <input id="searchKeyWord" type="text" />
+
+                                            <h4>Sort by</h4>
+                                            <select id="sortBy">
+                                                <option>relevance</option>
+                                                <option>dateasc</option>
+                                                <option>datedesc</option>
+                                            </select>
+                                            
+                                            <button type="#" id="searchKeyWordBtnXXX">Search</button>
+                                        </form>
+                                        <hr />
+                            
+                                <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
+                                    <fieldset>  
+
+                                        
+                                      <!-- Search by key word from Game Clips by Title -->
+                                        <li>
+                                            <a id="filterByTitle"><i class="fa fa-fw fa-dashboard"></i>Filter by Title</a>
+                                        </li>
+
+                                        <div class="form-group">
+                                            <label for="name">Title</label>
+                                            <input class="form-control" id="searchTitle" placeholder="game title" name="searchTitle" type="text">
+                                        </div>
+
+                                        <li>
+                                            <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>Filter by category</a>
+                                        </li>
+                                        <div class="form-group">
+                                            <label for="name">Category</label>
+                                            <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
+                                        </div>
+
+                                        <li>
+                                            <a id="filterByAgeRange"><i class="fa fa-fw fa-dashboard"></i>Filter by Age</a>
+                                        </li>
+
+                                        <div class="form-group">
+                                            <label for="name">Age</label>
+                                            <input class="form-control" id="searchAgeRange" placeholder="game Age range recommended" name="searchAgeRange" type="text">
+                                        </div>
+
+
+                                        <!-- Submit form Button to update info-->
+                                        <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
+
+                                        <!--
+                             <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
+
+                                    </fieldset>
+
+                                </form>
+                                
+                                
+                                   <li>
+                                 <!-- analyticsView.php -->
+                                <a href="#"><i class="fa fa-fw fa-power-off"></i> Analytics</a>
+                            </li>
+                                
+                               
+                              </ul>
+                              
+                            </div>
+
+                         
+
+                       
+                         
+                    </div>

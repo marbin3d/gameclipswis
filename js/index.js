@@ -1,4 +1,10 @@
+function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
 
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
 //Public URL access on UQ Zone cloud: https://infs3202-c562e525.uqcloud.net 
 
 /*ger active user credentials*/
@@ -465,6 +471,8 @@ $(document).ready(function () {
         $(window).on('load',function(){
         $('#welcomeModal').modal('show');
             });
+    
+    
 
     
     

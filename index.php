@@ -77,7 +77,8 @@ if(isset($_SESSION['source'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php">Game Clips</a>
+                        <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
+                        
                         <a class="navbar-brand" id="activeUser" ><?php echo $fnameUserActive; ?></a>
                         
                          <!--Retrieve active user--> 
@@ -90,7 +91,7 @@ if(isset($_SESSION['source'])){
                     <!-- Top Menu Items -->
                     <ul class="nav navbar-right top-nav ">
 
-                        <li class="active">
+                        <li>
                             <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
                         </li>
 
@@ -144,45 +145,32 @@ if(isset($_SESSION['source'])){
 
 
 
-                    <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">
-                       
-                        
-                        
+                    <!-- TEST SLIDE MENU-->
+                    <div id="mySidenav" class="sidenav">
+                        <ul>
+                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <div id="buttons">                                     
+                          <label> 
+                             <h4>Search YouTube</h4> 
+                           <input id="query" value='cats' type="text"/>  
+                              <button id="searchByWordBtn"  onclick="search()">Search</button>
+                          </label>
+                        </div>
+                        <!-- Search by key word from Game Clips DB, etc -->
+                        <form action="searchWord()" id="searchYoutubeDB">
+                            <h4>Search Game Clips</h4>
+                            <input id="searchKeyWord" type="text" />
 
-                            <div class="col-md-10">
-                             
-                              <ul class="nav navbar-nav side-nav">
-                            
-                               
-                               <!-- Btn search by keyword from YouTube-->
-                                     
-                                     <div id="buttons">                                     
-                                      <label> 
-                                         <h4>Search YouTube</h4> 
-                                       <input id="query" value='cats' type="text"/>  
-                                          <button id="searchByWordBtn"  onclick="search()">Search</button>
-                                      </label>
-                                    </div>     
-                                      
-                               
-                                       <!-- Search by key word from Game Clips DB, etc -->
-                                        <form action="searchWord()" id="searchYoutubeDB">
-                                            <h4>Search Game Clips</h4>
-                                            <input id="searchKeyWord" type="text" />
+                            <h4>Sort by</h4>
+                            <select id="sortBy">
+                                <option>relevance</option>
+                                <option>dateasc</option>
+                                <option>datedesc</option>
+                            </select>
 
-                                            <h4>Sort by</h4>
-                                            <select id="sortBy">
-                                                <option>relevance</option>
-                                                <option>dateasc</option>
-                                                <option>datedesc</option>
-                                            </select>
-                                            
-                                            <button type="#" id="searchKeyWordBtnXXX">Search</button>
-                                        </form>
-                                        <hr />
-                            
-                                <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
+                            <button type="#" id="searchKeyWordBtnXXX">Search</button>
+                        </form>
+                        <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
                                     <fieldset>  
 
                                         
@@ -223,22 +211,18 @@ if(isset($_SESSION['source'])){
                                     </fieldset>
 
                                 </form>
-                                
-                                
-                                   <li>
+                            <li>
                                  <!-- analyticsView.php -->
                                 <a href="#"><i class="fa fa-fw fa-power-off"></i> Analytics</a>
                             </li>
-                                
-                               
-                              </ul>
-                              
-                            </div>
-
-                         
-
-                       
-                         
+                        </ul>
+                      
+                        
+                        
+                        
+                        
+                        
+                        
                     </div>
                     <!-- /.navbar-collapse -->
                     
@@ -332,6 +316,7 @@ if(isset($_SESSION['source'])){
                             <h3 class="text-muted prj-name">
 						<span class="fa fa-users fa-2x principal-title"></span>
 							Recommended Clips
+                                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 					</h3>
                             <div class="jumbotron  list-content">
                                 <ul class="list-group">

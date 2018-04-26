@@ -18,7 +18,7 @@
   /*background-color: #629749 !important;*/    
  /* background-color: orangered !important;*/
     
- background-color: darkred !important;
+ background-color: black!important;
     
   border-color: #ffffff!important;
 }
@@ -27,8 +27,11 @@
     color: #ffffff!important;
 }
 
-.navbar-brand {
-    font-size:25px!important;
+.navbar-brand{
+    margin-top: 5px;
+    padding: 0;
+    width: 200px;
+    height: 75px;
 }
 
 .top-nav>li>a {
@@ -37,7 +40,7 @@
 
 
 /*side bar*/
-.side-nav {
+/*.side-nav {
     /*background-color: #629749 !important;*/
      /*background-color: orangered !important;*/
     
@@ -45,11 +48,16 @@
     
    
     
-    background-color: rgb (230,25,200)!important;
-       padding:5px !important;
+   /* background-color: rgb(38,121,196,0.2)!important;
+    border:5px;
+    border-color: black;
+    
+    padding:5px !important;
+    margin-top: 2.1%;
+    
     	
   
-}
+}*/
 
 .navbar-inverse .navbar-nav>li>a {
     color: #ffffff!important;
@@ -128,6 +136,7 @@ color:red;
 #mainpanecontentSearchByKeyWord li{
 top:20px ;
    
+   
    padding:10px;
   overflow: auto;
     list-style: none;
@@ -143,17 +152,19 @@ padding: 10px !important;
 
 /*sTYLES sOFIA*/
 
+/*MODAL*/
 #welcomeModal{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url("images/modalbackground.png");
+    background-image: url('../images/modalbackground.png');
     background-repeat: no-repeat;
     width:350px;
     height: 400px;
     border-radius: 10px;
     border: none;
+    background-size: 100%;
     
     
     
@@ -176,5 +187,51 @@ padding: 10px !important;
     text-align: center;
     color: white;
 }
+
+/*SLIDE MENU*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(38,121,196,0.2)!important;
+    margin-top: 5%;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+#page-wrapper{
+    width:50% !important;
+}
+
 
 /*end SOFIA*/
