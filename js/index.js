@@ -1,10 +1,30 @@
 function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("slidemenu").style.opacity = "100";
     }
 
-    function closeNav() {
+function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("slidemenu").style.opacity = "0";
+        
+        
+    
     }
+
+$("#menuYoutube").hide();
+$(".searchGameClips").click(function(){
+    $("#menuGameClips").show();
+    $("#menuYoutube").hide();
+
+});
+$(".searchYoutube").click(function(){
+    $("#menuYoutube").show();
+    $("#menuGameClips").hide();
+
+
+});
+
+
 //Public URL access on UQ Zone cloud: https://infs3202-c562e525.uqcloud.net 
 
 /*ger active user credentials*/

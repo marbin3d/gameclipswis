@@ -36,6 +36,16 @@
 
 .top-nav>li>a {
     color: #ffffff!important;
+    
+}
+
+.top-nav>li{
+    padding-top: 17px;
+    margin-bottom: 0;
+}
+
+#activeUser{
+    padding-top: 27px;
 }
 
 
@@ -81,9 +91,8 @@
 .top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover, .top-nav>.open>a:focus {
    /*background-color: #2e7d32!important;*/
  /* background-color: orange !important; */
-     background-color: rgb(250,72,100) !important;
-    
-    font-size: 15px;
+     background-color: rgb(38,121,196) !important;
+     
     
  
 }
@@ -193,35 +202,74 @@ padding: 10px !important;
     height: 100%;
     width: 0;
     position: fixed;
-    z-index: 1;
-    top: 0;
+    z-index: 1; 
     left: 0;
     background-color: rgb(38,121,196,0.2)!important;
-    margin-top: 5%;
     overflow-x: hidden;
     transition: 0.5s;
-    padding-top: 60px;
+    margin-top: 5%
+    
+}
+.sidenav ::-webkit-scrollbar { 
+    display: none; 
 }
 
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+
+#mySidenav ul {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    padding-top: 20px;
+   
+       
+    
+}
+
+#mySidenav li a {
     display: block;
-    transition: 0.3s;
+    color: #000;
+    padding: 8px 30px;
+    text-decoration: none;
+    font-size: 17px;
+    font-family: Arial;
+    
+    
+    
+    
+}
+
+.slidemenu{
+    transition-delay: 0.5s;
+}
+
+#mySidenav .menuicon{
+    padding-right:20px;
+    
+  
+    
+}
+#mySidenav li a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#mySidenav li a:hover:not(.active) {
+    background-color: rgb(38,121,196);
+    color: white;
+    
 }
 
 .sidenav a:hover {
     color: #f1f1f1;
 }
 
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+#filterByCategory{
+    padding-left: 30px;
+    color:black;
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    
 }
 
 @media screen and (max-height: 450px) {
@@ -234,4 +282,81 @@ padding: 10px !important;
 }
 
 
+#searchKeyWord{
+    width:400px;
+    height:34px;
+    line-height:35px;
+    background:#fff;
+    border:1px solid #000;
+    margin=0;
+    border-right:none;
+    font-weight:bold;
+    border-radius: 4px;
+}
+
+#query{
+    width:400px;
+    height:34px;
+    line-height:35px;
+    background:#fff;
+    border:1px solid #000;
+    margin=0;
+    border-right:none;
+    font-weight:bold;
+    border-radius: 4px;
+}
+/* TOP MENU*/
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(38,121,196,0.8);
+    opacity: 1; /* Firefox */
+    padding-left: 10px;
+    font-weight: none;
+    
+}
+
+.navbar-middle{
+    padding-top: 10px;
+    margin-bottom: 0;
+    
+}
+
+#menuGameClips{
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    margin-left: 27.6%;
+}
+
+#menuYoutube{
+    margin-left: 27.6%;
+    position: absolute;
+    
+    
+}
+
+.searchGameClips{
+    color:white;
+    padding: 8px 8px 8px 8px;
+    font-family: "Trebuchet MS", Arial, Verdana;   
+    background:rgb(38,121,196,0.5) ;
+    /*background-image: url('../images/diamond.png');
+    background-size: 12px 35px;
+    background-repeat:  no-repeat;*/
+    border-radius: 16px;
+    border: 1px solid rgb(38,121,196);
+    text-shadow: 1px 1px rgb(38,121,196,0.8);
+}
+
+.searchYoutube{
+     color:white;
+    padding: 8px 8px 8px 8px;
+    font-family: "Trebuchet MS", Arial, Verdana;   
+    background:rgb(38,121,196,0.5) ;
+    background-image: url('../images/youtubeicon.png') 10px 10px no-repeat;
+    border-radius: 16px;
+    border: 1px solid rgb(38,121,196);
+    text-shadow: 1px 1px rgb(38,121,196,0.8);
+    
+}
 /*end SOFIA*/
