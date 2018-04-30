@@ -275,7 +275,7 @@ if(isset($_SESSION['source'])){
 
                                         <div class="row">
                                             <div class="col-xs-4" class="embed-responsive embed-responsive-16by9">
-                                                <iframe class="embed-responsive-item" src="  <?php echo $sourceVid; ?> " width="100%" height="100%" frameborder="0"></iframe>
+                                                <video class="embed-responsive-item" src="  <?php echo $sourceVid; ?> " width="100%" height="100%" frameborder="0" preload="metadata" controls></iframe>
                                             </div>
                                         </div>
 
@@ -344,7 +344,7 @@ if(isset($_SESSION['source'])){
 
                                     <div class="row">
                                         <div class="col-xs-4" class="embed-responsive embed-responsive-16by9">
-                                            <iframe class="embed-responsive-item" src='videoClips/videoGame2.mp4' width="100%" height="100%" autoplay=false frameborder="0"></iframe>
+                                            <video class="embed-responsive-item" src='videoClips/videoGame2.mp4' width="100%" height="100%" preload="metadata" frameborder="0" controls ></video>
                                         </div>
 
                                     </div>
