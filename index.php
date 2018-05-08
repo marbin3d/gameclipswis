@@ -66,7 +66,7 @@ if(isset($_SESSION['source'])){
 
         <body>
 
-            <div id="wrapper">
+            <div id="wrapper" style="background-color:black;">
                 <!-- Navigation -->
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -77,7 +77,7 @@ if(isset($_SESSION['source'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <span class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;" onclick="openNav()">&#9776 </span>
+                        <span class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" onclick="openNav()">&#9776 </span>
                         <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
                         
                         <a class="navbar-brand" id="activeUser" ><?php echo $fnameUserActive; ?></a>
@@ -146,7 +146,7 @@ if(isset($_SESSION['source'])){
                         
                         <!--active user-->
                         <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
 
                                 <!--active user email-->
@@ -178,10 +178,10 @@ if(isset($_SESSION['source'])){
                                 <a href="index.php" ><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
                             </li>
                             <li>
-                                <a href="dashboardAbout.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
+                                <a href="about.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
                             </li>
                             <li>
-                                <a href="dashboardAbout.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
+                                <a href="help.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
                             </li>
                             <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
                                     <fieldset>  
@@ -206,7 +206,7 @@ if(isset($_SESSION['source'])){
                                             </li>
                                         </ul> 
                                         
-                                        <div class="form-group">
+                                        <!--<div class="form-group">
                                             <label for="name"></label>
                                             <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
                                         </div>
@@ -214,7 +214,7 @@ if(isset($_SESSION['source'])){
                                         
                                         
                                         <!-- Submit form Button to update info-->
-                                        <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
+                                        <!--<input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
 
                                         <!--
                              <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
@@ -253,13 +253,13 @@ if(isset($_SESSION['source'])){
                     <div class="container bootstrap snippet">
 
                          
-                             <div class="header">
+                             <div class="header" style="margin-top:50px;">
                             <div class="jumbotron  list-content">
                                
                                 
                                 <ul class="list-group">
                                     
-                                     <h3 class="text-muted prj-name">
+                                     <h3 class="text-muted prj-name" >
 					       	<span class="fa fa-users fa-2x principal-title"></span>
 							Game Clips Gallery
 					      </h3>

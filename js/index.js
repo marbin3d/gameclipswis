@@ -1,3 +1,4 @@
+//SOFIA CODE
 function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
         document.getElementById("slidemenu").style.opacity = "100";
@@ -23,6 +24,18 @@ $(".searchYoutube").click(function(){
 
 
 });
+
+$(function() {
+    // Since there's no list-group/tab integration in Bootstrap
+    $('.list-group-item').on('click',function(e){
+     	  var previous = $(this).closest(".list-group").children(".active");
+     	  previous.removeClass('active'); // previous list-item
+     	  $(e.target).addClass('active'); // activated list-item
+   	});
+});
+
+//END SOFIA CODE
+
 
 
 //Public URL access on UQ Zone cloud: https://infs3202-c562e525.uqcloud.net 
