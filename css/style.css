@@ -234,7 +234,6 @@ padding: 10px !important;
     text-decoration: none;
     font-size: 17px;
     font-family: Arial;
-    
 }
 
 .slidemenu{
@@ -256,7 +255,6 @@ padding: 10px !important;
     color: white;
     
 }
-
 .sidenav a:hover {
     color: #f1f1f1;
 }
@@ -267,8 +265,7 @@ padding: 10px !important;
     color:white;
     font-weight: 600;
     font-size: 15px;
-    text-decoration: none;
-    
+    text-decoration: none; 
 }
 
 @media screen and (max-height: 450px) {
@@ -281,7 +278,6 @@ padding: 10px !important;
     background-color: black;
 }
 
-
 #searchKeyWord{
     width:400px;
     height:34px;
@@ -293,7 +289,6 @@ padding: 10px !important;
     font-weight:bold;
     border-radius: 4px;
 }
-
 #query{
     width:400px;
     height:34px;

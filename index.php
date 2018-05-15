@@ -224,9 +224,9 @@ if(isset($_SESSION['source'])){
                                 </form>
                             
                                  <!-- analyticsView.php -->
-                            <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
-                                <li><a href="#"><i class="fa fa-fw fa-power-off "></i> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
-                        </ul>    
+                            <a id="filterByCategory">MORE FROM GAME CLIPS</a>
+                                <li><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
+                        </ul>   
   
                         
                         <!-- Search by key word from Game Clips DB, etc -->
