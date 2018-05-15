@@ -24,76 +24,79 @@ if(isset($_SESSION['source'])){
 ?>
 
     <?php  if($loadedCheck){ 
-           $sourceVid=$_SESSION['source']. '?rel=0';
+           $sourceVid=$_SESSION['source'];
                  }
  ?>
 
-        <!DOCTYPE html>
+    <!DOCTYPE html>
 
-        <html lang="en">
+    <html lang="en">
 
-        <head>
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <meta name="description" content="">
-            <meta name="author" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
 
-            <title>Project GAME CLIPS</title>
+        <title>Project GAME CLIPS</title>
 
-            <!-- Bootstrap Core CSS -->
-            <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
 
-            <!-- Custom CSS -->
-            <link href="css/sb-admin.css" rel="stylesheet">
-            <link href="css/style.css" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/sb-admin.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
-            <!-- Custom Fonts 
+        <!-- Custom Fonts 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
 
-            <!-- jQuery -->
-            <script src="js/jquery.js"></script>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
-            <!-- Bootstrap Core JavaScript -->
-            <script src="js/bootstrap.min.js"></script>
-            
-            <!-- Bootstrap Core JavaScript 
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+
+        <!-- Bootstrap Core JavaScript 
              <script src="https://apis.google.com/js/api.js"></script>-->
-             
 
-        </head>
 
-        <body>
+    </head>
 
-            <div id="wrapper" style="background-color:black;">
-                <!-- Navigation -->
-                <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+    <body>
+
+        <div id="wrapper" style="background-color:black;">
+            <!-- Navigation -->
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <span class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" onclick="openNav()">&#9776 </span>
-                        <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
-                        
-                        <a class="navbar-brand" id="activeUser" ><?php echo $fnameUserActive; ?></a>
-                        
-                         <!--Retrieve active user--> 
-                      
-                        
-
-
-                    </div>
+                    <span class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" onclick="openNav()">&#9776 </span>
                     
-                    <!-- Top Menu Items -->
-                    <div id='menuGameClips'>
-                    <ul class="nav navbar-middle top-nav " >
+                    <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
+
+                    <a class="navbar-brand" id="activeUser">
+                        <?php echo $fnameUserActive; ?>
+                    </a>
+
+                    <!--Retrieve active user-->
+
+
+
+
+                </div>
+
+                <!-- Top Menu Items -->
+                <div id='menuGameClips'>
+                    <ul class="nav navbar-middle top-nav ">
                         <li>
-                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips"/>
+                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips" />
                             <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
@@ -104,15 +107,15 @@ if(isset($_SESSION['source'])){
                                 Youtube
                             </button>
                         </li>
-                     
-                        
+
+
                     </ul>
-                    </div>
-                    <div id='menuYoutube'>
-                    <ul class="nav navbar-middle top-nav " >
+                </div>
+                <div id='menuYoutube'>
+                    <ul class="nav navbar-middle top-nav ">
                         <li>
-                            <input id="query" value='' type="text" placeholder="Search on Youtube"/>  
-                            <button class="btn btn-md btn-primary" id="searchByWordBtn"  onclick="search()">Search</button>
+                            <input id="query" value='' type="text" placeholder="Search on Youtube" />
+                            <button class="btn btn-md btn-primary" id="searchByWordBtn" onclick="search()">Search</button>
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
@@ -122,105 +125,118 @@ if(isset($_SESSION['source'])){
                                 Youtube
                             </button>
                         </li>
-                        
-                        
+
                     </ul>
-                    </div>
-                    
-                    <ul class="nav navbar-right top-nav ">
+                </div>
+
+                <ul class="nav navbar-right top-nav ">
+
+                    <li class="active">
+                        <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
+                    </li>
+
+                    <li class="button-wrapper">
+                        <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
+                    </li>
 
 
-                        <li class="button-wrapper">
-                            <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
-                        </li>
 
 
+
+                    <!--Login -->
+                    <li class="button-wrapper">
+                        <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
+                    </li>
+
+
+                    <!--active user-->
+                    <li class="dropdown">
                        
-                        <!--Login -->
-                        <li class="button-wrapper">
-                            <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
-                        </li>
+                       
+                       
+                        <a href="#" class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                         
                         
-                        
-                        
-                        <!--active user-->
-                        <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
+                        <ul class="dropdown-menu">
 
-                                <!--active user email-->
-                                <li>
-                                    <a href="#" id="activeEmail">
+                            <!--active user email-->
+                            <li>
+                                <a href="#" id="activeEmail">
                                         "<?php echo $emailUserActive; ?>"
                                     </a>
-                                </li>
+                            </li>
 
-                                <li class="divider"></li>
+                            <li class="divider"></li>
 
-                                <li>
-                                    <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                                </li>
-                            </ul>
+                            <li>
+                                <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <!-- SLIDE MENU-->
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="close closemenu" onclick="closeNav()">&times;</a>
+
+                    <ul id="slidemenu">
+                        <li>
+                            <a href="index.php"><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
                         </li>
-                        
-                        
-                    </ul>
+                        <li>
+                            <a href="about.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="help.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
+                        </li>
+                        <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
+                            <fieldset>
+
+
+                                <!-- Search by key word from Game Clips by Title -->
+
+                                <a id="filterByCategory">POPULAR CATEGORIES</a>
+
+                                <ul id="slidemenu">
+                                    <li>
+                                        <a href=""><span class="glyphicon glyphicon-star menuicon"></span>Reviews</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span class="glyphicon glyphicon-play menuicon"></span>Game Plays</a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboardAbout.php"><span class="glyphicon glyphicon-book menuicon"></span>Games Guides </a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboardAbout.php"><span class="glyphicon glyphicon-flag menuicon"></span>Adventure </a>
+                                    </li>
+                                </ul>
+                                
+                                
+                                
+                                
+                               <!-- Search by category
+                                <div class="form-group">
+                                    <label for="name"></label>
+                                    <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
+                                </div>
+                                -->
 
 
 
-                    <!-- SLIDE MENU-->
-                    <div id="mySidenav" class="sidenav">
-                        <a href="javascript:void(0)" class="close closemenu" onclick="closeNav()">&times;</a>
-                        
-                        <ul id="slidemenu">
-                            <li>
-                                <a href="index.php" ><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
-                            </li>
-                            <li>
-                                <a href="about.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
-                            </li>
-                            <li>
-                                <a href="help.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
-                            </li>
-                            <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
-                                    <fieldset>  
+                                <!-- Submit form Button to Search by title
+                                <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
+                                -->
+                                
+                                
 
-                                        
-                                      <!-- Search by key word from Game Clips by Title -->
-                                            
-                                            <a id="filterByCategory">POPULAR CATEGORIES</a>
-                                            
-                                        <ul id="slidemenu">
-                                            <li>
-                                                <a href="" ><span class="glyphicon glyphicon-star menuicon"></span>Reviews</a>
-                                            </li>
-                                            <li>
-                                                <a href="" ><span class="glyphicon glyphicon-play menuicon"></span>Game Plays</a>
-                                            </li>
-                                            <li>
-                                                <a href="dashboardAbout.php"><span class="glyphicon glyphicon-book menuicon"></span>Games Guides </a>
-                                            </li>
-                                            <li>
-                                                <a href="dashboardAbout.php"><span class="glyphicon glyphicon-flag menuicon"></span>Adventure </a>
-                                            </li>
-                                        </ul> 
-                                        
-                                        <!--<div class="form-group">
-                                            <label for="name"></label>
-                                            <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
-                                        </div>
-
-                                        
-                                        
-                                        <!-- Submit form Button to update info-->
-                                        <!--<input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
-
-                                        <!--
+                                <!--
                              <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
-                                    </fieldset>
+                            </fieldset>
 
+<<<<<<< HEAD
                                 </form>
                             
                                  <!-- analyticsView.php -->
@@ -244,334 +260,458 @@ if(isset($_SESSION['source'])){
                     </div>
                     <!-- /.navbar-collapse -->
                     
+=======
+                        </form>
+>>>>>>> 9f4aa6b3a7a642b8be16bc32f54a2bb9ae094fc1
 
-                </nav>
+                        <!-- analyticsView.php -->
+                        <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
+                        <li><a href="#"><i class="fa fa-fw fa-power-off "></i> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
+                    </ul>
 
 
-    <!-- content - body -->
-                <div id="page-wrapper">
-                    <div class="container bootstrap snippet">
+                    <!-- Search by key word from Game Clips DB, etc -->
 
-                         
-                             <div class="header" style="margin-top:50px;">
-                            <div class="jumbotron  list-content">
-                               
-                                
-                                <ul class="list-group">
-                                    
-                                     <h3 class="text-muted prj-name" >
-					       	<span class="fa fa-users fa-2x principal-title"></span>
-							Game Clips Gallery
-					      </h3>
 
-                                    <!-- clips from DB-->
-                                   
 
-                                    <?php  /*load=1 means true by title*/ 
+
+
+
+
+
+
+
+                </div>
+                <!-- /.navbar-collapse -->
+
+
+            </nav>
+
+
+            <!-- content - body -->
+            <div id="page-wrapper">
+                <div class="container bootstrap snippet">
+
+
+                   <div class="header" style="margin-top:50px;">
+                        <div class="jumbotron  list-content">
+
+
+                            <ul class="list-group">
+
+                                <h3 class="text-muted prj-name">
+                                    <span class="fa fa-users fa-2x principal-title"></span> Game Clips Gallery
+                                </h3>
+
+                                <!-- clips from DB-->
+
+
+                                <?php  /*load=1 means true by title*/ 
                                      if($loadedCheck){ ?>
-                                       
-                                       <!-- 
+
+                                <!-- 
                                         <div class="btn btn-success"> Play Clip found</div>-->
 
-                                        <div class="row">
-                                            <div class="col-xs-4" class="embed-responsive embed-responsive-16by9">
-                                                <video class="embed-responsive-item" src="  <?php echo $sourceVid; ?> " width="100%" height="100%" frameborder="0" preload="metadata" controls></iframe>
-                                            </div>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-xs-4" class="embed-responsive embed-responsive-16by9">
+                                        <video class="embed-responsive-item" src="  <?php echo $sourceVid; ?> " width="100%" height="100%" frameborder="0" preload="metadata" controls></video>
+                                    </div>
+                                </div>
 
-                                        <?php } ?>                                       
-                                        
-                                                                                
-                                         <div id="mainpanecontentSearch"> </div>
-                                         
-                                         </hr>
-                                          
-                                            
-                                             <div id="comments"> </div>
-                                             <div id="snippets"> </div>
-                                              <div id="views"> </div>
+                                <?php } ?>
 
 
-                                            <!-- from DB-->
-                                            <li href="#" class="list-group-item text-left">
-                                                <a class="btn btn-block btn-primary">
+                                <div id="mainpanecontentSearch"> </div>
+
+                                </hr>
+
+
+                                <div id="comments"> </div>
+                                <div id="snippets"> </div>
+                                <div id="views"> </div>
+
+
+                                <!-- from DB-->
+                                <li href="#" class="list-group-item text-left">
+                                    <a class="btn btn-block btn-primary">
                                                     <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
                                                 </a>
-                                            </li>
-                                </ul>
-                                
-                                
-                                <!-- from YouTube Search by keyWord-->
-                                 <ul class="list-group">  
-                                           
-                                           <h3 class="text-muted prj-name">
-					       	<span class="fa fa-users fa-2x principal-title"></span>
-							YouTube Results
-					      </h3>
-                               
-                                   
-                                        <div id="mainpanecontentSearchByKeyWord"> </div>
-                                        
-                                         <!-- from DB-->
-                                            <li href="#" class="list-group-item text-left">
-                                                <a class="btn btn-block btn-primary">
+                                </li>
+                            </ul>
+
+
+                            <!-- from YouTube Search by keyWord-->
+                            <ul class="list-group">
+
+                                <h3 class="text-muted prj-name">
+                                    <span class="fa fa-users fa-2x principal-title"></span> YouTube Results
+                                </h3>
+
+
+                                <div id="mainpanecontentSearchByKeyWord"> </div>
+
+                                <!-- from DB-->
+                                <li href="#" class="list-group-item text-left">
+                                    <a class="btn btn-block btn-primary">
                                                     <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
                                                 </a>
-                                            </li>
-                                </ul>
-                                
-                                
-                                
-                            </div>
+                                </li>
+                            </ul>
+
+
+
                         </div>
+                    </div>
 
-                        
-                        
-                        
-                        
 
-                        <div class="header">
-                            <h3 class="text-muted prj-name">
-						<span class="fa fa-users fa-2x principal-title"></span>
-							Recommended Clips
-                                
-					</h3>
-                            <div class="jumbotron  list-content">
-                                <ul class="list-group">
-                                    <!-- clips from DB-->
-                                    <span id="mainpanecontentRecommend">	
+
+
+
+
+                    <div class="header">
+                        <h3 class="text-muted prj-name">
+                            <span class="fa fa-users fa-2x principal-title"></span> Recommended Clips
+
+                        </h3>
+                        <div class="jumbotron  list-content">
+                            <ul class="list-group">
+                                <!-- clips from DB-->
+                                <span id="mainpanecontentRecommend">	
                             </span>
 
-                                    <div class="row">
-                                        <div class="col-xs-4" class="embed-responsive embed-responsive-16by9">
-                                            <video class="embed-responsive-item" src='videoClips/videoGame2.mp4' width="100%" height="100%" preload="metadata" frameborder="0" controls ></video>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-xs-4" class="embed-responsive embed-responsive-16by9">
+                                        <video class="embed-responsive-item" src='videoClips/videoGame2.mp4' width="100%" height="100%" preload="metadata" frameborder="0" controls></video>
+                                    </div>
+
+                                </div>
+
+
+
+                                <!-- recommender feature in progress-->
+                                <div class="row" align="center">
+                                    <div class="col-md-3 col-lg-3" align="center">
+
+                                        <form method="POST" id="formRecommend" action="#">
+                                            <!-- this input need a temporal value to start-->
+                                            <input id="fieldQ1Rec" name="question1Rec" type="text" placeholder="Number of recommendations" />
+
+                                        </form>
+
 
                                     </div>
-                                    
-                                    
-                                    
-                                     <!-- recommender feature in progress-->
-                                    <div class="row" align="center">
-                                        <div class="col-md-3 col-lg-3" align="center">
 
-                                            <form method="POST" id="formRecommend" action="#">
-                                                <!-- this input need a temporal value to start-->
-                                                <input id="fieldQ1Rec" name="question1Rec" type="text" placeholder="Number of recommendations" />
+                                    <hr>
 
-                                            </form>
-
-
-                                        </div>
-                                        
-                                        <hr>
-
-                                        <div class="col-md-10 col-lg-10" align="center">
-                                            <div class="col-md-6 col-lg-6" align="center">
-                                                <button type="button" id="recommendBtn" class="btn btn-success">Update Recommender</button>
-                                            </div>
-                                            
-                                            <div class="col-md-6 col-lg-6" align="center">
-                                                <div id="responsePrediction">clips recommended                          
-                                                </div>
-                                            </div>
-                                            
-                                            
-                                            
+                                    <div class="col-md-10 col-lg-10" align="center">
+                                        <div class="col-md-6 col-lg-6" align="center">
+                                            <button type="button" id="recommendBtn" class="btn btn-success">Update Recommender</button>
                                         </div>
 
-                                    </div>  <!-- end recommender feature in progress-->
-        
+                                        <div class="col-md-6 col-lg-6" align="center">
+                                            <div id="responsePrediction">clips recommended
+                                            </div>
+                                        </div>
 
 
-                                    <!-- from DB-->
-                                    <li href="#" class="list-group-item text-left">
-                                        <a class="btn btn-block btn-primary">
+
+                                    </div>
+
+                                </div>
+                                <!-- end recommender feature in progress-->
+
+
+
+                                <!-- from DB-->
+                                <li href="#" class="list-group-item text-left">
+                                    <a class="btn btn-block btn-primary">
                                             <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
                                         </a>
-                                    </li>
+                                </li>
 
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
+                    </div>
 
 
 
-                        <div class="header">
-                            <h3 class="text-muted prj-name">
-						<span class="fa fa-users fa-2x principal-title"></span>
-							Trendding Clips
-					</h3>
-                            <div class="jumbotron  list-content">
-                                <ul class="list-group">
-                                    <!-- clips from DB-->
-                                    <span id="mainpanecontentTrend">	
+                    <div class="header">
+                        <h3 class="text-muted prj-name">
+                            <span class="fa fa-users fa-2x principal-title"></span> Trendding Clips
+                        </h3>
+                        <div class="jumbotron  list-content">
+                            <ul class="list-group">
+                                <!-- clips from DB-->
+                                <span id="mainpanecontentTrend">	
                             </span>
 
-                                    <!-- from DB-->
-                                    <li href="#" class="list-group-item text-left">
-                                        <a class="btn btn-block btn-primary">
+                                <!-- from DB-->
+                                <li href="#" class="list-group-item text-left">
+                                    <a class="btn btn-block btn-primary">
                                             <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
                                         </a>
-                                    </li>
+                                </li>
 
-                                </ul>
-                            </div>
+                            </ul>
                         </div>
-
-
-
                     </div>
+
+
+
                 </div>
+            </div>
 
 
-                <!-- Modals -->
+            <!-- Modals -->
 
-                <!-- AddUser Modal -->
-                <div class="modal fade addClipDialog" id="registerUser">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <button data-dismiss="modal" class="close class pull-right"><span ata-dismiss="modal" class="glyphicon glyphicon-remove class pull-right"></span></button>
-                                    <h3 class="panel-title">User information</h3>
-                                </div>
+            <!-- AddUser Modal -->
+            <div class="modal fade addClipDialog" id="registerUser">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <button data-dismiss="modal" class="close class pull-right"><span ata-dismiss="modal" class="glyphicon glyphicon-remove class pull-right"></span></button>
+                                <h3 class="panel-title">User information</h3>
+                            </div>
 
-                                <!--What is hidden-->
-                                <div class="panel-body">
+                            <!--What is hidden-->
+                            <div class="panel-body">
 
-                                    <form accept-charset="UTF-8" role="form" action="php/registerUser.php" method="post" enctype="multipart/form-data">
+                                <form accept-charset="UTF-8" role="form" action="php/registerUser.php" method="post" enctype="multipart/form-data">
 
-                                        <fieldset>
+                                    <fieldset>
 
-                                            <div class="form-group">
-                                                <label for="name">First Name</label>
-                                                <input class="form-control" id="fname" placeholder="First name" name="fname" type="text">
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="name">First Name</label>
+                                            <input class="form-control" id="fname" placeholder="First name" name="fname" type="text">
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="name">Last Name</label>
-                                                <input class="form-control" id="lname" placeholder="last name" name="lname" type="text">
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="name">Last Name</label>
+                                            <input class="form-control" id="lname" placeholder="last name" name="lname" type="text">
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="name">username:</label>
-                                                <input class="form-control" id="username" placeholder="username" name="username" value="userName" type="label">
+                                        <div class="form-group">
+                                            <label for="name">username:</label>
+                                            <input class="form-control" id="username" placeholder="username" name="username" value="userName" type="label">
 
-                                            </div>
+                                        </div>
 
-                                            <!-- User Active Now defined on the top-->
-                                            <div class="form-group">
-                                                <label for="name">e-mail:</label>
-                                                <input class="form-control" id="email" placeholder="email" name="email" value="email" type="label">
+                                        <!-- User Active Now defined on the top-->
+                                        <div class="form-group">
+                                            <label for="name">e-mail:</label>
+                                            <input class="form-control" id="email" placeholder="email" name="email" value="email" type="label">
 
-                                            </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="name">language:</label>
-                                                <input class="form-control" id="language" placeholder="your language" name="language" value="" type="label">
+                                        <div class="form-group">
+                                            <label for="name">language:</label>
+                                            <input class="form-control" id="language" placeholder="your language" name="language" value="" type="label">
 
-                                            </div>
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="name">Password:</label>
-                                                <input class="form-control" id="password" placeholder="choose a password" name="password" value="password" type="password">
+                                        <div class="form-group">
+                                            <label for="name">Password:</label>
+                                            <input class="form-control" id="password" placeholder="choose a password" name="password" value="password" type="password">
 
-                                            </div>
+                                        </div>
 
-                                            <!-- Submit form Button to update info-->
-                                            <input type="submit" class="btn btn-md btn-primary" value="Subscribe" id="submit-addUserBtn">
+                                        <!-- Submit form Button to update info-->
+                                        <input type="submit" class="btn btn-md btn-primary" value="Subscribe" id="submit-addUserBtn">
 
 
-                                            <!--
+                                        <!--
                              <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
 
-                                        </fieldset>
-                                    </form>
+                                    </fieldset>
+                                </form>
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end AddUser -->
+            </div>
+            <!-- end AddUser -->
 
 
-                <!-- LoginUser Modal -->
+            <!-- LoginUser Modal -->
 
-                <div class="modal fade addClipDialog" id="loginUser">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <button data-dismiss="modal" class="close class pull-right"><span ata-dismiss="modal" class="glyphicon glyphicon-remove class pull-right"></span></button>
-                                    <h3 class="panel-title">Login</h3>
-                                </div>
+            <div class="modal fade addClipDialog" id="loginUser">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <button data-dismiss="modal" class="close class pull-right"><span ata-dismiss="modal" class="glyphicon glyphicon-remove class pull-right"></span></button>
+                                <h3 class="panel-title">Login</h3>
+                            </div>
 
-                                <!--What is hidden-->
-                                <div class="panel-body">
+                            <!--What is hidden-->
+                            <div class="panel-body">
 
-                                    <form accept-charset="UTF-8" role="form" action="php/loginUser.php" method="post" enctype="multipart/form-data">
+                                <form accept-charset="UTF-8" role="form" action="php/loginUser.php" method="post" enctype="multipart/form-data">
 
-                                        <fieldset>
-                                            <div class="form-group">
-                                                <label for="name">username:</label>
-                                                <input class="form-control" id="usernameLogin" placeholder="username" name="usernameLogin" value="" type="text">
-                                            </div>
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label for="name">username:</label>
+                                            <input class="form-control" id="usernameLogin" placeholder="username" name="usernameLogin" value="" type="text">
+                                        </div>
 
-                                            <!-- User Active Now defined on the top-->
-                                            <div class="form-group">
-                                                <label for="name">e-mail:</label>
-                                                <input class="form-control" id="emailLogin" placeholder="email" name="emailLogin" value="" type="text">
-                                            </div>
+                                        <!-- User Active Now defined on the top-->
+                                        <div class="form-group">
+                                            <label for="name">e-mail:</label>
+                                            <input class="form-control" id="emailLogin" placeholder="email" name="emailLogin" value="" type="text">
+                                        </div>
 
-                                            <div class="form-group">
-                                                <label for="name">Password:</label>
-                                                <input class="form-control" id="passwordLogin" placeholder="password" name="passwordLogin" value="" type="password">
-                                            </div>
+                                        <div class="form-group">
+                                            <label for="name">Password:</label>
+                                            <input class="form-control" id="passwordLogin" placeholder="password" name="passwordLogin" value="" type="password">
+                                        </div>
 
 
-                                            <!-- Submit form Button to update info-->
-                                            <input type="submit" class="btn btn-md btn-primary" value="log in" id="submit-loginUserBtn">
+                                        <!-- Submit form Button to update info-->
+                                        <input type="submit" class="btn btn-md btn-primary" value="log in" id="submit-loginUserBtn">
 
-                                            <!--
+                                        <!--
                              <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
-                                        </fieldset>
-                                    </form>
+                                    </fieldset>
+                                </form>
 
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- end loginUser -->
-                
+            </div>
+            <!-- end loginUser -->
+
+
+
+            <!-- AddRating Modal -->
+            <div class="modal fade addRatingModal" id="ratingUserVideo">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <button data-dismiss="modal" class="close class pull-right"><span ata-dismiss="modal" class="glyphicon glyphicon-remove class pull-right"></span></button>
+                                <h3 class="panel-title">Rating</h3>
+                            </div>
+
+                            <!--What is hidden-->
+                            <div class="panel-body">
+                               
+                                <!--to sent via AJAX-->
+                                <form accept-charset="UTF-8" id="formAddRating" role="form" action="#" method="post" enctype="multipart/form-data">
+
+                                    <h4>Rating Video</h4>
+                                    <p>Please, rate this video.</p>
+                                    
+                                    
+                                    
+                                    
+                                    <div class="radio" id="ratingStars" >
+
+                                        <label class="radio-inline">
+                                                  <input type="radio" id="opt1" name="optradio" value="1"> 1 star
+                                        </label>
+                                        <label class="radio-inline">
+                                                  <input type="radio" id="opt2" name="optradio" value="2">2 stars
+                                                </label>
+                                        <label class="radio-inline">
+                                                  <input type="radio" id="opt3" name="optradio" value="3">3 stars
+                                                </label>
+                                        <label class="radio-inline">
+                                                  <input type="radio" id="opt4" name="optradio" value="4">4 stars
+                                                </label>
+                                        <label class="radio-inline">
+                                                  <input type="radio" id="opt5" name="optradio" value="5">5 stars
+                                            </label>
+                                            
+                                    </div>   
+                                    
+                                    <div class="stateBarMsg">
+                                                  <label  id="stateBar" > state </label>
+                                    </div>
+
+                                    <!-- Submit form Button to update info
+                                    <input type="submit" class="btn btn-md btn-primary" class="glyphicon glyphicon-ok" value="Rate video" id="submit-addRatingVideoBtn">-->
+                                    
+                                    
+                                    <input type="text" class="btn btn-md btn-primary" class="glyphicon glyphicon-ok" value="Rate video" id="submit-addRatingVideoBtn">
+                                    
+                                     
+
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end AddRatingVideor -->
+
+
+
+            <!-- Modal request subscription-->
+            <div class="modal fade addRatingModal" id="ratingUserVideoNoDefined">
+
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <button data-dismiss="modal" class="close class pull-right"><span data-dismiss="modal" class="glyphicon glyphicon-remove class pull-right"></span></button>
+                                <h3 class="panel-title">Subscribe message</h3>
+                            </div>
+
+                            <div class="panel-body">
+
+                               
+                                <div >
+                                    <h3 >Welcome to GameClips</h3>
+                                    <p>Please, Subscribe to enjoy Game Clips</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END Modal request subscription -->
+
+
+
+
+
+
+
+
             <!-- Modal Welcome by Sofia -->
             <div class="modal fade" id="welcomeModal" role="dialog">
-              <button type="button" class="close closeWelcome" data-dismiss="modal">&times;</button>
-              <div class='welcomecontent'>
-                  <h3 class='welcometext'>Welcome to GameClips</h3>
-                  <p>A website dedicated to Video Games fans.</p>
-                  <p>Add your own videos, follow other gamers and like and save your favourite videos!</p>
+                <button type="button" class="close closeWelcome" data-dismiss="modal">&times;</button>
+                <div class='panel-body'>
+                    <h3 class='welcometext'>Welcome to GameClips</h3>
+                    <p>A website dedicated to Video Games fans.</p>
+                    <p>Add your own videos, follow other gamers and like and save your favourite videos!</p>
+                </div>
+                <!-- END Modal Welcome by Sofia -->
+
+
             </div>
-            <!-- END Modal Welcome by Sofia -->
-      
-    
-  </div>
-                
-                
-                
-                
 
 
-                <!-- /#wrapper -->
-                <script src="js/index.js"></script>
-                <script src="js/searchVideoByKeyWord.js"></script>
-                <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
-            
-                
-                
-        </body>
-        </html>
+
+
+
+
+            <!-- /#wrapper -->
+            <script src="js/index.js"></script>
+            <script src="js/searchVideoByKeyWord.js"></script>
+            <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+
+
+
+    </body>
+
+    </html>

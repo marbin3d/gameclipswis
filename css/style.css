@@ -20,7 +20,7 @@
     
  background-color: black!important;
     
-  border-color: rgb(38,121,196)!important;
+  border-color: #ffffff!important;
 }
 
 .navbar-inverse .navbar-brand {
@@ -32,9 +32,7 @@
     padding: 0;
     width: 200px;
     height: 75px;
-    
 }
-
 
 .top-nav>li>a {
     color: #ffffff!important;
@@ -44,12 +42,10 @@
 .top-nav>li{
     padding-top: 17px;
     margin-bottom: 0;
-    
 }
 
 #activeUser{
     padding-top: 27px;
-    
 }
 
 
@@ -89,6 +85,7 @@
     border-color: #ffffff!important;
 	background-color: transparent!important;
 }
+
 
 /*menus hover*/
 .top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover, .top-nav>.open>a:focus {
@@ -162,7 +159,7 @@ padding: 10px !important;
 
 }
 
-/*sTYLES sOFIA*/
+/*Styles Sofia*/
 
 /*MODAL*/
 #welcomeModal{
@@ -183,6 +180,7 @@ padding: 10px !important;
 }
 
 
+    
 .closeWelcome{
     margin: 10px;
 }
@@ -206,7 +204,7 @@ padding: 10px !important;
     position: fixed;
     z-index: 1; 
     left: 0;
-    background-color: rgb(38,121,196,0.5)!important;
+    background-color: rgb(38,121,196,0.2)!important;
     overflow-x: hidden;
     transition: 0.5s;
     margin-top: 5%
@@ -234,6 +232,13 @@ padding: 10px !important;
     text-decoration: none;
     font-size: 17px;
     font-family: Arial;
+<<<<<<< HEAD
+=======
+    
+    
+    
+    
+>>>>>>> 9f4aa6b3a7a642b8be16bc32f54a2bb9ae094fc1
 }
 
 .slidemenu{
@@ -243,6 +248,7 @@ padding: 10px !important;
 #mySidenav .menuicon{
     padding-right:20px;
     
+  
     
 }
 #mySidenav li a.active {
@@ -275,11 +281,11 @@ padding: 10px !important;
 
 #page-wrapper{
     width:50% !important;
-    background-color: black;
+    background-color:black;
 }
 
 #searchKeyWord{
-    width:400px;
+    width:300px;
     height:34px;
     line-height:35px;
     background:#fff;
@@ -537,5 +543,4 @@ body{
     
     
 }
-
 /*end SOFIA*/

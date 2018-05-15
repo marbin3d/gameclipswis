@@ -18,7 +18,10 @@ if ($con->connect_error) {
 }
 
 
-$email=$_POST["userEmail"];
+
+$email= $_POST["userEmail"];
+//remove double quotes
+$email=str_replace('"','',$email);
 
 //test
 //$email="no email defined";
