@@ -3,14 +3,11 @@
 
 
 .button-wrapper{
-    margin-bottom:30px;
+    margin: auto;
+    width: 50%;
 }
 
-.backgroundcolor{
-	background-color:#4fb9d0 !important;
-     
-    
-}
+
 
 
 /* customise color backgrounds*/
@@ -20,7 +17,7 @@
     
  background-color: black!important;
     
-  border-color: #ffffff!important;
+  border-color: rgb(38,121,196)!important;
 }
 
 .navbar-inverse .navbar-brand {
@@ -32,7 +29,9 @@
     padding: 0;
     width: 200px;
     height: 75px;
+    
 }
+
 
 .top-nav>li>a {
     color: #ffffff!important;
@@ -40,12 +39,15 @@
 }
 
 .top-nav>li{
-    padding-top: 17px;
-    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    
+    
 }
 
 #activeUser{
     padding-top: 27px;
+    
 }
 
 
@@ -85,7 +87,6 @@
     border-color: #ffffff!important;
 	background-color: transparent!important;
 }
-
 
 /*menus hover*/
 .top-nav>li>a:hover, .top-nav>li>a:focus, .top-nav>.open>a, .top-nav>.open>a:hover, .top-nav>.open>a:focus {
@@ -155,11 +156,23 @@ top:20px ;
 #addClip,#showFavourites{
     position: relative !important;
     top:10px;
-padding: 10px !important;
+    padding: 10px !important;
+    background-color: rgb(38,121,196,0.8);
+    border: 1px solid rgb(38,121,196);
+    
+    
+    
 
 }
 
-/*Styles Sofia*/
+#addClip:hover{
+    background-color: rgb(38,121,196);
+}
+#showFavourites:hover{
+    background-color: rgb(38,121,196);
+}
+
+/*sTYLES sOFIA*/
 
 /*MODAL*/
 #welcomeModal{
@@ -180,7 +193,6 @@ padding: 10px !important;
 }
 
 
-    
 .closeWelcome{
     margin: 10px;
 }
@@ -204,12 +216,13 @@ padding: 10px !important;
     position: fixed;
     z-index: 1; 
     left: 0;
-    background-color: rgb(38,121,196,0.2)!important;
+    background-color: rgb(38,121,196,0.5)!important;
     overflow-x: hidden;
     transition: 0.5s;
-    margin-top: 5%
+    margin-top: 4%;
     
 }
+
 .sidenav ::-webkit-scrollbar { 
     display: none; 
 }
@@ -232,13 +245,8 @@ padding: 10px !important;
     text-decoration: none;
     font-size: 17px;
     font-family: Arial;
-<<<<<<< HEAD
-=======
     
     
-    
-    
->>>>>>> 9f4aa6b3a7a642b8be16bc32f54a2bb9ae094fc1
 }
 
 .slidemenu{
@@ -248,7 +256,7 @@ padding: 10px !important;
 #mySidenav .menuicon{
     padding-right:20px;
     
-  
+    
     
 }
 #mySidenav li a.active {
@@ -280,12 +288,12 @@ padding: 10px !important;
 }
 
 #page-wrapper{
-    width:50% !important;
-    background-color:black;
+    width:100% !important;
+    background-color: black;
 }
 
 #searchKeyWord{
-    width:300px;
+    width:400px;
     height:34px;
     line-height:35px;
     background:#fff;
@@ -443,8 +451,10 @@ padding: 10px !important;
 .tab-content.panels-faq {
   padding: 0;
   border: 0;
- padding-left: 20%;
     color: white;
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
     
     
     
@@ -468,11 +478,11 @@ padding: 10px !important;
   }
   .panel-heading {
     background-color: #f6f6f6;
-    padding: 0 16px;
     line-height: 48px;
     border-top-right-radius: 2px;
     border-top-left-radius: 2px;
     color: white;
+    
     h2 {      
       margin: 0;
       padding: 14px 0 14px;
@@ -509,6 +519,7 @@ padding: 10px !important;
     /* Set a specific height */
     
     height: 40%;
+    
 
     /* Position and center the image to scale nicely on all screens */
     background-position: center;
@@ -516,7 +527,7 @@ padding: 10px !important;
     background-size: cover;
     position: relative;
     padding-top: 50%;
-    right: 9.5%;
+    
     
       
 }
@@ -543,4 +554,5 @@ body{
     
     
 }
+
 /*end SOFIA*/

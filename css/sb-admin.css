@@ -18,7 +18,8 @@ body {
 }
 
 #wrapper {
-    padding-left: 0;
+   width: 100%;
+    display: inline-block;
 }
 
 #page-wrapper {
@@ -34,7 +35,7 @@ body {
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 225px;
+     display: inline-block;
     }
 
     #page-wrapper {
@@ -181,7 +182,8 @@ ul.alert-dropdown {
 .panel-green > .panel-heading {
     border-color: #5cb85c;
     color: #fff;
-    background-color: #5cb85c;    
+    background-color: #5cb85c;
+    padding-top: 50px;
     
 }
 
