@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-
 //$_SESSION['fname'] = "john";
-
 //to log out session_destroy();
 //if(isset($_SESSION['id']))
 //unset($_SESSION['id']);  
@@ -11,7 +9,7 @@ session_start();
 if(isset($_SESSION['email'] )){
     
 $fnameUserActive=$_SESSION['fname'];
-$emailUserActive=$_SESSION['email']. "";
+$emailUserActive=$_SESSION['email'];
 
 }
 else{
@@ -58,8 +56,6 @@ $fnameUserActive="General User";
 
         <!-- Custom Fonts 
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
-
-
 
 
     </head>
@@ -138,18 +134,16 @@ $fnameUserActive="General User";
 
 
                     <!-- End Top Menu Items -->
-                    
-
-                    <!-- drop down Active User-->
-                    <li class="dropdown" style="display:none;">
-                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md " data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                  
+                    <!-- drop down Active User style="display:none;"-->
+                    <li class="dropdown" >
+                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"  id="creatorFullName"><i class="fa fa-user"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
 
                                 <!--active user email-->
                                 <li>
-                                    <a href="#" id="activeEmail">
-                                        "<?php echo $emailUserActive; ?>"
-                                    </a>
+                                                                       
+                                    <a href="#" id="activeEmail"><?php echo strval($emailUserActive); ?></a>
                                 </li>
 
                                 <li class="divider"></li>
@@ -427,10 +421,6 @@ $fnameUserActive="General User";
                                     </label>								
                                 </div>
                                 -->
-
-
-
-
                                     <div class="form-group">
                                         <div class="col-md-2"></div>
                                         <div class="col-md-8">
@@ -465,7 +455,8 @@ $fnameUserActive="General User";
         <!-- end MODALS definitions-->
 
 
-        <script src="js/index.js"></script>
+        <!--<script src="js/index.js"></script>-->
+        <script src="js/navegationSide.js"></script>
         <script src="js/myClips.js"></script>
 
     </body>

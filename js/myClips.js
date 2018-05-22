@@ -18,22 +18,22 @@ console.log(emailUser);
 console.log(fnameUser);
 
 
-//load videos available in the platform for general user or active user videos 
-
+//load videos available in the platform for general user or active user videos
 function retrieveVideosMyClips(emailUsrActive) {   
     
     var rpReqUrl = "../php/loadVideosMyClips.php";
     
     
-    console.log("send data: " + emailUsrActive.replace(/\s/g,'').replace("\n"," "));
+    console.log("send data: " + emailUsrActive.replace("\n",""));
+    
+    console.log(emailUsrActive+"");
 
     $.post(rpReqUrl,
 
         //data
         {
             //activeUser and remove white spaces around the email
-            userEmail: emailUsrActive.replace(/\s/g,'').replace("\n"," ")
-
+           userEmail: JSON.stringify(emailUsrActive)
         },
 
 
@@ -102,8 +102,7 @@ function retrieveVideosMyClips(emailUsrActive) {
                     var btnAddVideoToMyClips='<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="inviteSubscribe(' + videoId + ')">Add to My Clips</button>  ';    
 
                     //FORMAT video Item
-                    var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo+    '<label class="name">' +  FirstNameUploader  + ' <br>Date video: ' + dateVideo  + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="gery"class="modal-title"><strong>' + FirstNameUploader+ '</strong> <span style="color:rgb(0, 160, 70)">Views.</span></h4></div>    <div class="modal-body"><h6>category</h6><blockquote>' + category + '</blockquote><h3>Clip</h3><blockquote>' +videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote><h6>' + additionalDetails + '</h6></div>     <div class="modal-footer">    <!-- new Btn --> '+btnAddVideoToMyClips+'<button type="button" class="btn btn-default" data-dismiss="modal">Closing player</button>   </div></div></div></div><a  class="btn btn-danger  btn-sm glyphicon glyphicon-trash" href="#" id="' +videoId + '" onclick="inviteSubscribe(' + videoId + ')" title="Remove Video"></a> </label>    <div class="break"></div></li>' ;
-                                        
+                    var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo+    '<label class="name">' +  FirstNameUploader  + ' <br>Date video: ' + dateVideo  + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="gery"class="modal-title"><strong>' + FirstNameUploader+ '</strong> <span style="color:rgb(0, 160, 70)">Views.</span></h4></div>    <div class="modal-body"><h6>category</h6><blockquote>' + category + '</blockquote><h3>Clip</h3><blockquote>' +videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote><h6>' + additionalDetails + '</h6></div>     <div class="modal-footer">    <!-- new Btn --> '+btnAddVideoToMyClips+'<button type="button" class="btn btn-default" data-dismiss="modal">Closing player</button>   </div></div></div></div><a  class="btn btn-danger  btn-sm glyphicon glyphicon-trash" href="#" id="' +videoId + '" onclick="inviteSubscribe(' + videoId + ')" title="Remove Video"></a> </label>    <div class="break"></div></li>' ;                                        
 
                     $('#mainpanecontentSearch').prepend(itemVideo);
 
@@ -126,16 +125,15 @@ function retrieveVideosMyClips(emailUsrActive) {
  //var emailUser1=$('#activeEmail').val();
 
 
-$(document).ready(function () {
-    
-   // console.log(typeof emailUser);
-    
+$(document).ready(function () {    
+   // console.log(typeof emailUser);    
    //emailUser="marbin3d@hotmail.com";
   // emailUser  = document.getElementById('activeEmail').innerHTML;
-    
-    
 
-   retrieveVideosMyClips(JSON.stringify(emailUser));
+   //retrieveVideosMyClips(JSON.stringify(emailUser));
+   retrieveVideosMyClips(emailUser); 
+    
+    
     
    // var emailUser1  = $('#activeEmail').val()+"";
      /*load Videos in myClips */
@@ -148,10 +146,8 @@ $(document).ready(function () {
     //Load preview Profile image before submision  with validation
     //works
     $('#videoSelected').change(function () {
-        
-        
+                
        // alert('This file size is: ' + this.files[0].size/1024/1024 + " MB");
-
         //validate if file less than 850 MB
         
          if (this.files[0].size/1024/1024 <850) {
