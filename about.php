@@ -73,12 +73,12 @@ if(isset($_SESSION['source'])){
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                            <span class="item1"></span>
-                            <span class="item2"></span>
-                            <span class=""></span>
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" >&#9776 </span>
+                        <span class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" onclick="openNav()">&#9776 </span>
                         <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
                         
                         <a class="navbar-brand" id="activeUser" ><?php echo $fnameUserActive; ?></a>
@@ -91,8 +91,6 @@ if(isset($_SESSION['source'])){
                     </div>
                     
                     <!-- Top Menu Items -->
-                    <form class="navbar-form navbar-middle">
-                    
                     <div id='menuGameClips'>
                     <ul class="nav navbar-middle top-nav " >
                         <li>
@@ -130,20 +128,18 @@ if(isset($_SESSION['source'])){
                     </ul>
                     </div>
                     
-                    </form>
-                    
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-right top-nav ">
 
 
-                        <li>
-                            <a type="text" class="btn btn-alert btn-md item1" data-toggle="modal" data-target="#registerUser">Subscribe</a>
+                        <li class="button-wrapper">
+                            <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
                         </li>
 
 
                        
                         <!--Login -->
-                        <li>
-                            <a type="text" class="btn btn-alert btn-md item2" data-toggle="modal" data-target="#loginUser">Login</a>
+                        <li class="button-wrapper">
+                            <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
                         </li>
                         
                         
@@ -151,7 +147,7 @@ if(isset($_SESSION['source'])){
                         
                         <!--active user-->
                         <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md item3" data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
 
                                 <!--active user email-->
@@ -176,7 +172,7 @@ if(isset($_SESSION['source'])){
 
                     <!-- SLIDE MENU-->
                     <div id="mySidenav" class="sidenav">
-                        
+                        <a href="javascript:void(0)" class="close closemenu" onclick="closeNav()">&times;</a>
                         
                         <ul id="slidemenu">
                             <li>
@@ -231,19 +227,10 @@ if(isset($_SESSION['source'])){
                                  <!-- analyticsView.php -->
                             <a id="filterByCategory">MORE FROM GAME CLIPS</a>
                                 <li><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
-                        </ul>   
+                        </ul>    
   
                         
                         <!-- Search by key word from Game Clips DB, etc -->
-                        
-                        
-                            
-                        
-                      
-                        
-                        
-                        
-                        
                         
                         
                     </div>
