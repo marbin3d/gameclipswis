@@ -70,31 +70,34 @@ if(isset($_SESSION['source'])){
             <div id="wrapper" style="background-color:black;">
                 <!-- Navigation -->
                 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <span class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" onclick="openNav()">&#9776 </span>
-                        <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
-                        
-                        <a class="navbar-brand" id="activeUser" ><?php echo $fnameUserActive; ?></a>
-                        
-                         <!--Retrieve active user--> 
-                      
-                        
-
-
-                    </div>
+                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" >&#9776 </span>
                     
-                    <!-- Top Menu Items -->
-                    <div id='menuGameClips'>
-                    <ul class="nav navbar-middle top-nav " >
+                    <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
+
+                    <a class="navbar-brand" id="activeUser">
+                        <?php echo $fnameUserActive; ?>
+                    </a>
+
+                    <!--Retrieve active user-->
+
+
+
+
+                </div>
+
+                <!-- Top Menu Items -->
+                <div id='menuGameClips'>
+                    <ul class="nav navbar-middle top-nav ">
                         <li>
-                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips"/>
+                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips" />
                             <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
@@ -105,15 +108,15 @@ if(isset($_SESSION['source'])){
                                 Youtube
                             </button>
                         </li>
-                     
-                        
+
+
                     </ul>
-                    </div>
-                    <div id='menuYoutube'>
-                    <ul class="nav navbar-middle top-nav " >
+                </div>
+                <div id='menuYoutube'>
+                    <ul class="nav navbar-middle top-nav ">
                         <li>
-                            <input id="query" value='' type="text" placeholder="Search on Youtube"/>  
-                            <button class="btn btn-md btn-primary" id="searchByWordBtn"  onclick="search()">Search</button>
+                            <input id="query" value='' type="text" placeholder="Search on Youtube" />
+                            <button class="btn btn-md btn-primary" id="searchByWordBtn" onclick="search()">Search</button>
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
@@ -123,31 +126,30 @@ if(isset($_SESSION['source'])){
                                 Youtube
                             </button>
                         </li>
-                        
-                        
+
                     </ul>
-                    </div>
-                    
-                    <ul class="nav navbar-right top-nav ">
+                </div>
+
+                <ul class="nav navbar-nav navbar-right ">
+
+                    <li>
+                        <a href="myClips.php" class="btn btn-alert btn-md">My Clips</a>
+                    </li>
+
+                    <li>
+                        <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
+                    </li>
 
 
-                        <li class="button-wrapper">
-                            <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
-                        </li>
+                    <!--Login -->
+                    <li >
+                        <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
+                    </li>
 
 
-                       
-                        <!--Login -->
-                        <li class="button-wrapper">
-                            <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
-                        </li>
-                        
-                        
-                        
-                        
-                        <!--active user-->
-                        <li class="dropdown">
-                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                    <!--active user-->
+                    <li class="dropdown" style="display:none;">
+                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md " data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
 
                                 <!--active user email-->
@@ -164,80 +166,80 @@ if(isset($_SESSION['source'])){
                                 </li>
                             </ul>
                         </li>
-                        
-                        
+                </ul>
+
+
+                <!-- SLIDE MENU-->
+                <div id="mySidenav" class="sidenav">
+                    
+
+                    <ul id="slidemenu">
+                        <li>
+                            <a href="index.php"><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="about.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="help.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
+                        </li>
+                        <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
+                            <fieldset>
+
+
+                                <!-- Search by key word from Game Clips by Title -->
+
+                                <a id="filterByCategory">POPULAR CATEGORIES</a>
+
+                                <ul id="slidemenu">
+                                    <li>
+                                        <a href=""><span class="glyphicon glyphicon-star menuicon"></span>Reviews</a>
+                                    </li>
+                                    <li>
+                                        <a href=""><span class="glyphicon glyphicon-play menuicon"></span>Game Plays</a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboardAbout.php"><span class="glyphicon glyphicon-book menuicon"></span>Games Guides </a>
+                                    </li>
+                                    <li>
+                                        <a href="dashboardAbout.php"><span class="glyphicon glyphicon-flag menuicon"></span>Adventure </a>
+                                    </li>
+                                </ul>
+                                
+                               <!-- Search by category
+                                <div class="form-group">
+                                    <label for="name"></label>
+                                    <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
+                                </div>
+                                -->
+
+                                <!-- Submit form Button to Search by title
+                                <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
+                                -->
+                                
+                                
+
+                                <!--
+                             <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
+
+                            </fieldset>
+
+                        </form>
+
+                        <!-- analyticsView.php -->
+                        <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
+                        <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 
 
+                    <!-- Search by key word from Game Clips DB, etc -->
 
-                    <!-- SLIDE MENU-->
-                    <div id="mySidenav" class="sidenav">
-                        <a href="javascript:void(0)" class="close closemenu" onclick="closeNav()">&times;</a>
-                        
-                        <ul id="slidemenu">
-                            <li>
-                                <a href="index.php" ><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
-                            </li>
-                            <li>
-                                <a href="about.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
-                            </li>
-                            <li>
-                                <a href="help.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
-                            </li>
-                            <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
-                                    <fieldset>  
 
-                                        
-                                      <!-- Search by key word from Game Clips by Title -->
-                                            
-                                            <a id="filterByCategory">POPULAR CATEGORIES</a>
-                                            
-                                        <ul id="slidemenu">
-                                            <li>
-                                                <a href="" ><span class="glyphicon glyphicon-star menuicon"></span>Reviews</a>
-                                            </li>
-                                            <li>
-                                                <a href="" ><span class="glyphicon glyphicon-play menuicon"></span>Game Plays</a>
-                                            </li>
-                                            <li>
-                                                <a href="dashboardAbout.php"><span class="glyphicon glyphicon-book menuicon"></span>Games Guides </a>
-                                            </li>
-                                            <li>
-                                                <a href="dashboardAbout.php"><span class="glyphicon glyphicon-flag menuicon"></span>Adventure </a>
-                                            </li>
-                                        </ul> 
-                                        
-                                        <!--<div class="form-group">
-                                            <label for="name"></label>
-                                            <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
-                                        </div>
+                </div>
+                <!-- /.navbar-collapse -->
 
-                                        
-                                        
-                                        <!-- Submit form Button to update info-->
-                                        <!--<input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
 
-                                        <!--
-                             <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
-
-                                    </fieldset>
-
-                                </form>
-                            
-                                 <!-- analyticsView.php -->
-                            <a id="filterByCategory">MORE FROM GAME CLIPS</a>
-                                <li><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
-                        </ul>    
-  
-                        
-                        <!-- Search by key word from Game Clips DB, etc -->
-                        
-                        
-                    </div>
-                    <!-- /.navbar-collapse -->
-                    
-
-                </nav>
+            </nav>
 
 
                 <!-- content - body -->

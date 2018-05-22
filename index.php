@@ -77,7 +77,7 @@ if(isset($_SESSION['source'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                    <span class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" onclick="openNav()">&#9776 </span>
+                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" >&#9776 </span>
                     
                     <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
 
@@ -129,56 +129,48 @@ if(isset($_SESSION['source'])){
                     </ul>
                 </div>
 
-                <ul class="nav navbar-right top-nav ">
+                <ul class="nav navbar-nav navbar-right ">
 
-                    <li class="active">
-                        <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
+                    <li>
+                        <a href="myClips.php" class="btn btn-alert btn-md">My Clips</a>
                     </li>
 
-                    <li class="button-wrapper">
+                    <li>
                         <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser">Subscribe</a>
                     </li>
 
 
-
-
-
                     <!--Login -->
-                    <li class="button-wrapper">
+                    <li >
                         <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
                     </li>
 
 
                     <!--active user-->
-                    <li class="dropdown">
-                       
-                       
-                       
-                        <a href="#" class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"><i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
-                        
-                        
-                        <ul class="dropdown-menu">
+                    <li class="dropdown" style="display:none;">
+                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md " data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
 
-                            <!--active user email-->
-                            <li>
-                                <a href="#" id="activeEmail">
+                                <!--active user email-->
+                                <li>
+                                    <a href="#" id="activeEmail">
                                         "<?php echo $emailUserActive; ?>"
                                     </a>
-                            </li>
+                                </li>
 
-                            <li class="divider"></li>
+                                <li class="divider"></li>
 
-                            <li>
-                                <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                            </li>
-                        </ul>
-                    </li>
+                                <li>
+                                    <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
                 </ul>
 
 
                 <!-- SLIDE MENU-->
                 <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="close closemenu" onclick="closeNav()">&times;</a>
+                    
 
                     <ul id="slidemenu">
                         <li>
@@ -235,7 +227,7 @@ if(isset($_SESSION['source'])){
 
                         <!-- analyticsView.php -->
                         <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
-                        <li><a href="#"><i class="fa fa-fw fa-power-off "></i> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
+                        <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 
 
@@ -255,14 +247,15 @@ if(isset($_SESSION['source'])){
 
 
                    <div class="header" style="margin-top:50px;">
+                       <h3 class="text-muted prj-name" style="font-family:'Bangers';color:white;">
+                                    <span class="fa fa-users fa-2x principal-title" ></span> Game Clips Gallery
+                                </h3>
                         <div class="jumbotron  list-content">
 
 
                             <ul class="list-group">
 
-                                <h3 class="text-muted prj-name">
-                                    <span class="fa fa-users fa-2x principal-title"></span> Game Clips Gallery
-                                </h3>
+                                
 
                                 <!-- clips from DB-->
 
@@ -284,7 +277,7 @@ if(isset($_SESSION['source'])){
 
                                 <div id="mainpanecontentSearch"> </div>
 
-                                </hr>
+                                
 
 
                                 <div id="comments"> </div>
@@ -300,29 +293,34 @@ if(isset($_SESSION['source'])){
                                 </li>
                             </ul>
 
-
-                            <!-- from YouTube Search by keyWord-->
-                            <ul class="list-group">
-
-                                <h3 class="text-muted prj-name">
-                                    <span class="fa fa-users fa-2x principal-title"></span> YouTube Results
-                                </h3>
-
-
-                                <div id="mainpanecontentSearchByKeyWord"> </div>
-
-                                <!-- from DB-->
-                                <li href="#" class="list-group-item text-left">
-                                    <a class="btn btn-block btn-primary">
+                       </div>
+                       
+                            <div class="header" style="margin-top:50px;">
+                                    <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white">
+					       	<span class="fa fa-users fa-2x principal-title"></span>
+							YouTube Results
+					      </h3>
+                            <div class="jumbotron  list-content">
+                                <!-- from YouTube Search by keyWord-->
+                                 <ul class="list-group">  
+                                           
+                                           
+                               
+                                   
+                                        <div id="mainpanecontentSearchByKeyWord"> </div>
+                                        
+                                         <!-- from DB-->
+                                            <li href="#" class="list-group-item text-left">
+                                                <a class="btn btn-block btn-primary">
                                                     <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
                                                 </a>
-                                </li>
-                            </ul>
-
-
-
+                                            </li>
+                                </ul>
+                                
+                                
+                                
+                            </div>
                         </div>
-                    </div>
 
 
 
@@ -330,47 +328,39 @@ if(isset($_SESSION['source'])){
 
 
                     <div class="header">
-                        <h3 class="text-muted prj-name">
+                        <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
                             <span class="fa fa-users fa-2x principal-title"></span> Recommended Clips
 
                         </h3>
                         <div class="jumbotron  list-content">
                             <ul class="list-group">
                                 <!-- clips from DB-->
-                                <span id="mainpanecontentRecommend">	
-                            </span>
-
-                                <div class="row">
-                                    <div class="col-xs-4" class="embed-responsive embed-responsive-16by9">
-                                        <video class="embed-responsive-item" src='videoClips/videoGame2.mp4' width="100%" height="100%" preload="metadata" frameborder="0" controls></video>
-                                    </div>
-
-                                </div>
-
-
+                                <span id="mainpanecontentRecommend"></span>
 
                                 <!-- recommender feature in progress-->
                                 <div class="row" align="center">
-                                    <div class="col-md-3 col-lg-3" align="center">
+                                    <div class="col-md-3 col-lg-3" align="center"style="width:100%; margin-top:5%;">
 
-                                        <form method="POST" id="formRecommend" action="#">
+                                        <form method="POST" id="formRecommend" action="#" >
                                             <!-- this input need a temporal value to start-->
-                                            <input id="fieldQ1Rec" name="question1Rec" type="text" placeholder="Number of recommendations" />
+                                            <label >Number of Recomendations</label>
+                                            <input style="width:50px;" id="fieldQ1Rec" name="question1Rec" type="text" placeholder="#" />
+                                            <button type="button" id="recommendBtn" class="searchGameClips" style="background:rgb(38,121,196) ;">Show Recommended Videos</button>
 
                                         </form>
 
 
                                     </div>
 
-                                    <hr>
+                                  
 
-                                    <div class="col-md-10 col-lg-10" align="center">
-                                        <div class="col-md-6 col-lg-6" align="center">
-                                            <button type="button" id="recommendBtn" class="btn btn-success">Update Recommender</button>
+                                    <div  align="center">
+                                        <div  align="center">
+                                            
                                         </div>
 
-                                        <div class="col-md-6 col-lg-6" align="center">
-                                            <div id="responsePrediction">clips recommended
+                                        <div align="center">
+                                            <div id="responsePrediction">
                                             </div>
                                         </div>
 
@@ -383,12 +373,14 @@ if(isset($_SESSION['source'])){
 
 
 
-                                <!-- from DB-->
+                                <!-- from DB
                                 <li href="#" class="list-group-item text-left">
                                     <a class="btn btn-block btn-primary">
+                                            
                                             <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
                                         </a>
                                 </li>
+                                -->
 
                             </ul>
                         </div>
@@ -397,7 +389,7 @@ if(isset($_SESSION['source'])){
 
 
                     <div class="header">
-                        <h3 class="text-muted prj-name">
+                        <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
                             <span class="fa fa-users fa-2x principal-title"></span> Trendding Clips
                         </h3>
                         <div class="jumbotron  list-content">

@@ -53,6 +53,7 @@ $fnameUserActive="General User";
         <!-- Custom CSS -->
         <link href="css/sb-admin.css" rel="stylesheet">
         <link href="css/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
 
         <!-- Custom Fonts 
@@ -72,132 +73,164 @@ $fnameUserActive="General User";
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                    <a class="navbar-brand" href="index.php">Game Clips</a>
-                    <a class="navbar-brand">Creator Page</a>
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" >&#9776 </span>
+                    
+                    <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
+                    <a class="navbar-brand" id="activeUser">Creator Page</a>
 
 
+                </div>
+                <!-- Top Menu Items -->
+                <div id='menuGameClips'>
+                    <ul class="nav navbar-middle top-nav ">
+                        <li>
+                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips" />
+                            <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
+                            <button id="GameClips" class="searchGameClips">
+                                <img src="images/diamond.png" height="20" width="10">
+                                Game Clips
+                            </button>
+                            <button id="Youtube" class="searchYoutube">
+                                <img src="images/youtubeicon.png" height="20" width="20">
+                                Youtube
+                            </button>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div id='menuYoutube'>
+                    <ul class="nav navbar-middle top-nav ">
+                        <li>
+                            <input id="query" value='' type="text" placeholder="Search on Youtube" />
+                            <button class="btn btn-md btn-primary" id="searchByWordBtn" onclick="search()">Search</button>
+                            <button id="GameClips" class="searchGameClips">
+                                <img src="images/diamond.png" height="20" width="10">
+                                Game Clips
+                            </button>
+                            <button id="Youtube" class="searchYoutube">
+                                <img src="images/youtubeicon.png" height="20" width="20">
+                                Youtube
+                            </button>
+                        </li>
+
+                    </ul>
                 </div>
 
 
 
                 <!-- Top Menu Items -->
-                <ul class="nav navbar-right top-nav ">
+                <ul class="nav navbar-nav navbar-right ">
+
 
                     <li>
-                        <a href="index.php"><i class="fa fa-fw fa-dashboard"></i>Home</a>
+                        <a href="myClips.php" class="btn btn-alert btn-md">My Clips</a>
                     </li>
-
-                    <li class="active">
-                        <a href="myClips.php"><i class="fa fa-fw fa-dashboard"></i>My Clips</a>
-                    </li>
-
+                    
                     <li>
-                        <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>About</a>
+                        <a href="php/logout.php" class="btn btn-alert btn-md"> Log Out</a>
                     </li>
-
-                    <li>
-                        <a href="dashboardAbout.php"><i class="fa fa-fw fa-dashboard"></i>Help </a>
-                    </li>
-
 
 
                     <!-- End Top Menu Items -->
                     
 
                     <!-- drop down Active User-->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="creatorFullName"><i class="fa fa-user"></i> <?php echo $fnameUserActive; ?> </a>
-                        <ul class="dropdown-menu">
-                            <!--active user email-->
-                            <li>
-                               
-                               <!--active user email-->
-                                
-                                    <a href="#" id="activeEmail"><?php echo $emailUserActive; ?>
+                    <li class="dropdown" style="display:none;">
+                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md " data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+
+                                <!--active user email-->
+                                <li>
+                                    <a href="#" id="activeEmail">
+                                        "<?php echo $emailUserActive; ?>"
                                     </a>
-                               
+                                </li>
 
-                            </li>
+                                <li class="divider"></li>
 
-                            <li class="divider"></li>
-
-                        </ul>
-
-
-
-                    </li>
-
-                    <li>
-                        <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                    </li>
+                                <li>
+                                    <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                                </li>
+                            </ul>
+                        </li>
 
 
                 </ul>
 
 
-                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav side-nav">
+                <!-- SLIDE MENU-->
+                <div id="mySidenav" class="sidenav">
+                    
+
+                    <ul id="slidemenu">
+                        <li>
+                            <a href="index.php"><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
+                        </li>
+                        <li>
+                            <a href="about.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
+                        </li>
+                        <li>
+                            <a href="help.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
+                        </li>
+                        <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
+                            <fieldset>
 
 
-                        <div class="col-md-10">
-                            <form accept-charset="UTF-8" role="form" action="php/searchVideo.php" method="post" enctype="multipart/form-data">
+                                <!-- Search by key word from Game Clips by Title -->
 
-                                <fieldset>
+                                <a id="filterByCategory">POPULAR CATEGORIES</a>
+
+                                <ul id="slidemenu">
                                     <li>
-                                        <a id="filterByTitle"><i class="fa fa-fw fa-dashboard"></i>Filter by Title</a>
+                                        <a href=""><span class="glyphicon glyphicon-star menuicon"></span>Reviews</a>
                                     </li>
-
-                                    <div class="form-group">
-                                        <label for="name">Title</label>
-                                        <input class="form-control" id="searchTitle" placeholder="game title" name="searchTitle" type="text">
-                                    </div>
-
                                     <li>
-                                        <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>Filter by category</a>
+                                        <a href=""><span class="glyphicon glyphicon-play menuicon"></span>Game Plays</a>
                                     </li>
-                                    <div class="form-group">
-                                        <label for="name">Category</label>
-                                        <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
-                                    </div>
-
                                     <li>
-                                        <a id="filterByAgeRange"><i class="fa fa-fw fa-dashboard"></i>Filter by Age</a>
+                                        <a href="dashboardAbout.php"><span class="glyphicon glyphicon-book menuicon"></span>Games Guides </a>
                                     </li>
+                                    <li>
+                                        <a href="dashboardAbout.php"><span class="glyphicon glyphicon-flag menuicon"></span>Adventure </a>
+                                    </li>
+                                </ul>
+                                
+                               <!-- Search by category
+                                <div class="form-group">
+                                    <label for="name"></label>
+                                    <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
+                                </div>
+                                -->
 
-                                    <div class="form-group">
-                                        <label for="name">Age</label>
-                                        <input class="form-control" id="searchAgeRange" placeholder="game Age range recommended" name="searchAgeRange" type="text">
-                                    </div>
+                                <!-- Submit form Button to Search by title
+                                <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
+                                -->
+                                
+                                
 
-
-                                    <!-- Submit form Button to update info-->
-                                    <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
-
-                                    <!--
+                                <!--
                              <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
-                                </fieldset>
+                            </fieldset>
 
-                            </form>
+                        </form>
 
-                        </div>
-
-                        <li>
-                            <a href="analyticsView.php"><i class="fa fa-fw fa-power-off"></i> Analytics</a>
-                        </li>
-
-
+                        <!-- analyticsView.php -->
+                        <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
+                        <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 
 
+                    <!-- Search by key word from Game Clips DB, etc -->
+
+
                 </div>
-                <!-- /.navbar-collapse -->
 
             </nav>
 
@@ -207,31 +240,32 @@ $fnameUserActive="General User";
 
                 <div class="col-md-12">
                     <div class="row">
-                        <div class="panel panel-success backgroundcolor">
-                            <div class="panel-heading">Actions</div>
+                        <div style="background-color:transparent ;">
+                        <div class="panel-heading" style="margin-top:50px; background-image:url(images/myclipsbackground.jpg);">
+                        <div class="panel-body" style="margin-left:35%; margin-right:31%; width:100%;">
+                        <div class="col-md-2">
+                            <div class="text-left">
 
-
-                            <div class="col-md-2">
-                                <div class="text-left">
-
-                                    <div class="button-wrapper">
-                                        <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip">Add new Clip</button>
-                                    </div>
-
+                                <div class="button-wrapper" >
+                                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip">Add new Clip</button>
                                 </div>
-
-                            </div>
-                            <div class="col-md-2">
-
-                                <div class="button-wrapper">
-                                    <button type="button" class="btn btn-success btn-md" id="showFavourites">Show Favourites</button>
-
-                                </div>
-                                <div class="clearfix"></div>
 
                             </div>
 
                         </div>
+                        <div class="col-md-2">
+                           
+                            <div class="button-wrapper">
+                                <button type="button" class="btn btn-success btn-md" id="showFavourites">Show Favourites</button>
+
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
 
                     </div>
                 </div>
@@ -249,7 +283,7 @@ $fnameUserActive="General User";
                 <div class="container bootstrap snippet">
 
                     <div class="header">
-                        <h3 class="text-muted prj-name">
+                        <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
                             Game Clips
                             <span class="fa fa-users fa-2x principal-title"></span>
 
@@ -305,11 +339,7 @@ $fnameUserActive="General User";
 
 
         <!--Start Footer-->
-        <div>
-            <!-- End page wrapper-->
-
-            SM project 2018
-        </div>
+        
         <!-- end wrapper or main container -->
         <!-- -->
         <!--End Footer-->
@@ -435,6 +465,7 @@ $fnameUserActive="General User";
         <!-- end MODALS definitions-->
 
 
+        <script src="js/index.js"></script>
         <script src="js/myClips.js"></script>
 
     </body>

@@ -1,14 +1,25 @@
 //SOFIA CODE
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("slidemenu").style.opacity = "100";
+document.getElementById("myBtn").addEventListener("click", toggleNav);
+
+function toggleNav(){
+    navSize = document.getElementById("mySidenav").style.width;
+    if (navSize == "250px") {
+        return closeNav();
+    }
+    return openNav();
 }
+
+function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("slidemenu").style.opacity = "100";
+    }
 
 function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("slidemenu").style.opacity = "0";
-
-}
+        document.getElementById("mySidenav").style.width = "0px";
+        document.getElementById("slidemenu").style.opacity="0";
+    
+    
+    }
 
 
 $("#menuYoutube").hide();
