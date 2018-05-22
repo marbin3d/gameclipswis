@@ -21,8 +21,6 @@ if ($con->connect_error) {
 
 
 
-
-
 ///////////////////////////////////////////
 ////////////SQL DB REQUEST////////////
 
@@ -155,7 +153,7 @@ $dataToRecommender[] = array(
 
 //API recommender Service integration
 $urlAPI = 'https://www.linkservicesonline.com/recommend';
-$url = 'https://www.linkservicesonline.com'; 
+//$url = 'https://www.linkservicesonline.com'; 
 
 
 //Preparing data for API recommender
@@ -183,12 +181,18 @@ $jsonDecoded=json_decode($json_response,true);
 
 $respJsonRest=array();
 
-$respJsonRest[] = array(                 
-     "name" => $jsonDecoded["name"],                  
-      "success" => true          
+$respJsonRest[] = array( 
+    
+    //ids video clips recommended
+    
+     "recommendIdVideos" => $jsonDecoded["recommendIdVideos"], 
+    
+    
+      "success" => true
+    
         );
 
-//REsponse to game clips client js
+//Response to game clips client js
 header('Content-Type:application/json');
 echo json_encode(array("response"=>$respJsonRest));
 #echo json_encode($respJsonRest);
@@ -202,7 +206,9 @@ echo ("<SCRIPT LANGUAGE='JavaScript'>
                <NOSCRIPT>
                    <a href='$url'>Successfully login . Click here if you are not redirected.</a>
                </NOSCRIPT>");   */
+
 mysqli_close($con);
+
 ?>
 
 

@@ -1,13 +1,15 @@
 
-             //video API for statisticts views
-            //var videoapikey="AIzaSyCsjESmlY5yHGXI5sy8pdIGMhRqQ12CxOc"; //my MSVapikey  
+//YouTube API integration
+
+//video API for statisticts views
+//var videoapikey="AIzaSyCsjESmlY5yHGXI5sy8pdIGMhRqQ12CxOc"; //my MSVapikey  
 
 /*MSV youtube Key*/
-  var videoapikey="AIzaSyB7OIivHxyHW6-VFXvtOsMCJiwHpqZsic8"; //my MSVapikey    
+var videoapikey="AIzaSyB7OIivHxyHW6-VFXvtOsMCJiwHpqZsic8"; //my MSVapikey    
 
 
-            var videoID="676ZCxkMoII"; //id of video           
-            var url="https://www.googleapis.com/youtube/v3/videos?part=statistics&id="+videoID+"&key="+videoapikey;  
+var videoID="676ZCxkMoII"; //id of video           
+var url="https://www.googleapis.com/youtube/v3/videos?part=statistics&id="+videoID+"&key="+videoapikey;  
            
            //video part to get comments
           //   var urlComments="https://www.googleapis.com/youtube/v3/commentThread?part=&id="+videoID+"&key="+videoapikey;  
@@ -238,9 +240,6 @@ function searchVideoByKeyWord() {
 
 
 
-
-
-
 function renderVideosRequested(dataClipsServerDBReply){
 
             //loop OVER JSON OBJECT
@@ -324,9 +323,11 @@ function renderVideosRequested(dataClipsServerDBReply){
                     
                     
                     
-                    var btnPlayVideo='<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon glyphicon-play-circle" data-toggle="modal" data-target="#' + itemListID + '" title="Game Clips Player"> '+pictDefault+'</button>'
+                    var btnPlayVideo='<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon glyphicon-play-circle" data-toggle="modal" data-target="#' + itemListID + '" title="Game Clips Player"> '+pictDefault+'</button>';
                     
-                     var btnAddVideoToMyClips='<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="sendAddToMyClipsDB(' + videoId + ')">Add to My Clips</button>  '
+                     //var btnAddVideoToMyClips='<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="sendAddToMyClipsDB(' + videoId + ')">Add to My Clips</button>  ';
+                     
+                      var btnAddVideoToMyClips = '<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon " data-toggle="modal" data-target=' + inviteNoMemberAddVideoToMyClips() + '     onclick="autoFillInfoYouTube(' +sourceVideo + ')" >Add to My Clips </button>';
     
                   
                     
@@ -335,7 +336,7 @@ function renderVideosRequested(dataClipsServerDBReply){
                     
                                     
                                         
-
+                    //Results from youtube
                     $('#mainpanecontentSearch').prepend(itemVideo);
 
               //  }
@@ -350,9 +351,56 @@ function renderVideosRequested(dataClipsServerDBReply){
 }
 
 
+//fn invite to subscribe if a non-member wants to add a video clip to its list
+function inviteNoMemberAddVideoToMyClips() {
+
+    if (emailU == '"noemaildefined"' || emailU == "")
+
+    {
+        
+
+      return "#AddClipFromYouTubeNoDefined";
+
+    } else {
+        //defined in index.js to reset the form beform completion
+       
+        
+        return "#AddClipFromYouTube";
+    }
+}
 
 
 
+///////////////////////////////////////////////
+
+//auto completion and other info complete by user before upload from form with its post method
+//reset  some fields and fill others in Form YouTube contained in videoInfo input variable in modal
+//reset and auto completion
+function autoFillInfoYouTube( videoInfo) {
+       
+   //reset ratings in ratings modal all optradio
+    //$('input[name="optradio"]').prop('checked',false);
+    //$('input[name="languageYouTubeClip"]').prop('checked',false);
+    // $('input[name="sourceVideoURLYouTube"]').prop('checked',false);
+    
+    
+     console.log("url of video to autofill");
+    console.log(videoInfo);
+    
+    //url Youtube video
+    document.getElementById('sourceVideoURLYouTube').value=videoInfo;
+    
+     //$('#sourceVideoURLYouTube').val(videoInfo);
+    
+    
+    
+    // $("#stateBarFormYouTubeAddVideo").html(" <div style='color:green'> State </div> ");
+
+}
+
+
+
+/////////////////////////////////////////////////////////////
 
 /*Main function Search*/
 
@@ -481,12 +529,15 @@ function getOutput(item){
     
                    var itemListID=videoId;
     
-                var FirstNameUploader=channelTitle;
+                   var FirstNameUploader=channelTitle;
     
-                   var videoFrame = '<div align="center" class="col-xs-12" class="embed-responsive embed-responsive-16by9"> <iframe class="embed-responsive-item" src= "'+sourceVideo +'"   frameborder="0" allowfullscreen></iframe> </div>';
+                 var videoFrame = ' <div class="col-xs-10" class="embed-responsive embed-responsive-16by9">                                <iframe class="embed-responsive-item" src= '+sourceVideo +' width="100%" height="100%"   frameborder="0" ></iframe> </div>';
+
+                   //var videoFrame = '<div align="center" class="col-xs-12" class="embed-responsive embed-responsive-16by9"> <video class="embed-responsive-item" src= "'+sourceVideo +'"   frameborder="0"  width="100%" height="100%"   preload="metadata" controls ></video> </div>';
     
     // var videoFrame = '<a href= '+sourceVideo +'>'+sourceVideo+'</a>';
     
+   
     
     
     
@@ -503,7 +554,10 @@ function getOutput(item){
                     var btnPlayVideo='<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon glyphicon-play-circle" data-toggle="modal" data-target="#' + itemListID + '" title="Game Clips Player"> '+pictDefault+'</button>'
                     
                     
-                    var btnAddVideoToMyClips='<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="inviteSubscribe(' + videoId + ')">Add to My Clips</button>  '
+                   // var btnAddVideoToMyClips='<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="inviteSubscribe(' + videoId + ')">Add to My Clips</button>  ';
+    
+    var btnAddVideoToMyClips = '<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon " data-toggle="modal" data-target=' + inviteNoMemberAddVideoToMyClips() + '  onclick=autoFillInfoYouTube("' + sourceVideo + '")>Add to My Clips </button>';
+    
                     
                     
                     var modalContent='<!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="grey"class="modal-title"><strong>' + FirstNameUploader+ '</strong> <span style="color:rgb(0, 160, 70)">Views: '+viewCount+' </span> </h4> </hr>        <div class=row> <div class="col-xs-2"> <h6>category</h6> ' + category + '</div> <div class="col-xs-2">  <h6>Language</h6>' +language+ '</div> <h6>' + '<div class="col-xs-2"> <h6> additionalDetails</h6>' + '</div></hr>    <div class="modal-body">  ' +videoFrame + '</div></div>' ; 
@@ -705,6 +759,121 @@ function searchWord() {
     
      }
 */
+    
+    
+    ////////////////////
+    
+    //AJAX Submit information from Youtube form auto and user completion-addClipBtnYouTube
+    
+     $('#submit-addClipBtnYouTube').click(function (e) {
+
+
+        e.preventDefault();
+
+        // var rpReqUrl1 = "https://www.linkservicesonline.com/recommend";        
+
+        var rpReqUrlRec = "../php/addVideoInfoYoutube.php";
+        var urlYouTube = document.getElementById('sourceVideoURLYouTube').value;
+         
+         var title = document.getElementById('titleYouTube').value;
+         var category = document.getElementById('categoryYouTube').value;
+         var language = document.getElementById('languageYouTube').value;
+         var description = document.getElementById('descriptionYouTube').value;
+         var ageRange = document.getElementById('ageRangeYouTube').value;
+         
+         
+
+        $.ajax({
+
+            type: 'POST',
+            url: rpReqUrlRec,
+            data: {
+               //email user active and white space free
+                email: emailU,
+                urlYouTubeVideo: urlYouTube+"",
+                
+                title:title,
+                category:category,
+                language:language,
+                description: description,
+                ageRange:ageRange
+            },
+            dataType: 'json',
+            success: function (data) {
+                // alert("Data: " + JSON.stringify(data)+ "\nStatus: " + status);
+
+                var itemsName = "";
+                var items = [];
+
+               // $.each(data, function (key, val) {
+
+                    /*  $('#responsePrediction').append($('<div>', {                                        
+                          text: element)
+                      }));
+                      */
+                    
+                     alert("successful info url upload");
+
+                    //retrive each video info
+                    //for (m in val) {
+                       
+
+                        // var usrId = value[m].userID;
+                       // var fname = val[m].name;
+                       // var videoId = val[m].videoId;
+                        //var userId = val[m].userId;
+                        // var predictedRating =  value[m].predictedRating;
+                        
+                         //var resp = val[m].success;
+
+                        //every record                 
+                        //items.push("<li id='" + key + "'>" + JSON.stringify(val) + "</li>");
+                        // console.log(fname);
+
+                        //itemsName = itemsName + JSON.stringify(val + " . ");
+                        //append to body or some div 
+
+                        //if (val == "false") {
+                            //$("#responsePrediction").html("Please, check all fields ");
+                             // alert("error info url upload");
+
+                       // } else {
+                            //$("#responsePrediction").html(" <div style='color:blue'>JSON Data from recommender: </div> " + val[m].name);
+                            //console.log(val[m].name);
+                            //alert("successful info url upload");
+                       // }
+                        
+                        
+
+                   // } //end for      
+
+
+
+               // });
+                
+                
+            },
+
+
+            error: function (result) {
+                alert("Error");
+            }
+        });
+
+    });
+
+    //end  AJAX  WORKS ////
+    /////////////// END NEW RECOMMENDER CODE
+
+    
+    
+    
+    
+    
+    
+    ///////////////////
+    
+    
     
     
     });

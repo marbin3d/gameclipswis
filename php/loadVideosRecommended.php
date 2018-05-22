@@ -18,7 +18,7 @@ if ($con->connect_error) {
 }
 
 
-$videoIdRecommended=$_POST["videoIdClicked"];
+$videoIdRecommended=$_POST["videoId"];
 
 //test
 //$email="no email defined";
