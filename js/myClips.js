@@ -14,11 +14,82 @@ var fnameUser  = document.getElementById('creatorFullName').text ;
 
 var emailUser  = document.getElementById('activeEmail').text;
 
+//remove white spaces
+var emailU = emailUser.replace(/\s/g, '');
+emailU = emailU.replace("\n", " ");
+
 console.log(emailUser);
 console.log(fnameUser);
 
 
-//load videos available in the platform for general user or active user videos
+//fn delete uploaded video only by subscribers
+function deleteBySubcribers(videoIdToDelete){
+    
+    //if subscriber login
+     //fn ajax deleteVIdeo.php
+    
+    if (emailU == '"noemaildefined"' || emailU == "")
+
+    {
+        //invite to subscribe
+         alert("Please subscribe to enable more options!" + emailU + "to allow you delete this video: " + videoIdToDelete);
+        
+
+    } else {
+        
+        //delete video 
+        deleteVideoFromDB(videoIdToDelete);
+        
+    }
+   
+    
+}
+
+
+//Delete video via AJAX
+ function deleteVideoFromDB(videoId2Delete){
+     
+        var rpReqUrlRec = "../php/deleteVideoById.php";
+      
+        var email = emailU;     
+
+        //var videoIdRated = currentVideoId;
+        console.log("" + emailU);
+        console.log("" + videoId2Delete);
+
+        $.ajax({
+
+            type: 'POST',
+            url: rpReqUrlRec,
+            data: {
+                emailDB: email,
+                videoIdDB: videoId2Delete              
+            },
+            dataType: 'json',
+            success: function (data) {
+                // alert("Data: " + JSON.stringify(data)+ "\nStatus: " + status);
+                
+                //once successfully return home
+                window.location.href='../index.php';
+
+            },
+
+            error: function (result) {
+                alert("Error deleting video " + videoId2Delete);
+
+            }
+            
+        });     
+         
+ }
+
+
+
+
+
+
+
+//load videos available in the platform uploaded by active user
 function retrieveVideosMyClips(emailUsrActive) {   
     
     var rpReqUrl = "../php/loadVideosMyClips.php";
@@ -64,11 +135,9 @@ function retrieveVideosMyClips(emailUsrActive) {
                     console.log(viewsVideo);
                                      
                     //slice details
-                    //var subject=contDetails.slice(0,100)+"...";
-                    
+                    //var subject=contDetails.slice(0,100)+"...";                    
                      var FirstNameUser=fnameUser;
                
-
                     //var language=value[m].language;
                     //by default
                     var language = "english";
@@ -79,8 +148,7 @@ function retrieveVideosMyClips(emailUsrActive) {
                      var category=categoryVideo;
                     //var FirstName=value[m].fnameCreator;
                     var fNameVideoUploadedBy = videoUploadByAuthor;
-                    var FirstNameUploader = "Uploaded by  " + fNameVideoUploadedBy;
-                    
+                    var FirstNameUploader = "Uploaded by  " + fNameVideoUploadedBy;                    
                     
                     /*to define*/
                      var videoFrame = "video frame here";                    
@@ -102,7 +170,7 @@ function retrieveVideosMyClips(emailUsrActive) {
                     var btnAddVideoToMyClips='<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="inviteSubscribe(' + videoId + ')">Add to My Clips</button>  ';    
 
                     //FORMAT video Item
-                    var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo+    '<label class="name">' +  FirstNameUploader  + ' <br>Date video: ' + dateVideo  + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="gery"class="modal-title"><strong>' + FirstNameUploader+ '</strong> <span style="color:rgb(0, 160, 70)">Views.</span></h4></div>    <div class="modal-body"><h6>category</h6><blockquote>' + category + '</blockquote><h3>Clip</h3><blockquote>' +videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote><h6>' + additionalDetails + '</h6></div>     <div class="modal-footer">    <!-- new Btn --> '+btnAddVideoToMyClips+'<button type="button" class="btn btn-default" data-dismiss="modal">Closing player</button>   </div></div></div></div><a  class="btn btn-danger  btn-sm glyphicon glyphicon-trash" href="#" id="' +videoId + '" onclick="inviteSubscribe(' + videoId + ')" title="Remove Video"></a> </label>    <div class="break"></div></li>' ;                                        
+                    var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo+    '<label class="name">' +  FirstNameUploader  + ' <br>Date video: ' + dateVideo  + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="gery"class="modal-title"><strong>' + FirstNameUploader+ '</strong> <span style="color:rgb(0, 160, 70)">Views.</span></h4></div>    <div class="modal-body"><h6>category</h6><blockquote>' + category + '</blockquote><h3>Clip</h3><blockquote>' +videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote><h6>' + additionalDetails + '</h6></div>     <div class="modal-footer">    <!-- new Btn --> '+btnAddVideoToMyClips+'<button type="button" class="btn btn-default" data-dismiss="modal">Closing player</button>   </div></div></div></div><a  class="btn btn-danger  btn-sm glyphicon glyphicon-trash" href="#" id="' +videoId + '" onclick="deleteBySubcribers(' + videoId + ')" title="Remove Video"></a> </label>    <div class="break"></div></li>' ;                                        
 
                     $('#mainpanecontentSearch').prepend(itemVideo);
 
@@ -118,40 +186,32 @@ function retrieveVideosMyClips(emailUsrActive) {
 
 } //end 
 
-
- //var emailUser1  = document.getElementById("activeEmail").innerHTML;
-//var emailUser1  =  document.getElementById("activeEmail").innerHTML ;
-
- //var emailUser1=$('#activeEmail').val();
+//var emailUser1  = document.getElementById("activeEmail").innerHTML;
+//var emailUser1  =  document.getElementById("activeEmail").innerHTML;
+//var emailUser1=$('#activeEmail').val();
 
 
 $(document).ready(function () {    
    // console.log(typeof emailUser);    
    //emailUser="marbin3d@hotmail.com";
   // emailUser  = document.getElementById('activeEmail').innerHTML;
-
    //retrieveVideosMyClips(JSON.stringify(emailUser));
+    
    retrieveVideosMyClips(emailUser); 
-    
-    
     
    // var emailUser1  = $('#activeEmail').val()+"";
      /*load Videos in myClips */
      //retrieveVideos( emailUser1);
     
-    
-    
     //option photo    
     //requestPhoto(stgUserID)
-    //Load preview Profile image before submision  with validation
+    //Load preview video before submision  with validation
     //works
-    $('#videoSelected').change(function () {
-                
+    $('#videoSelected').change(function () {                
        // alert('This file size is: ' + this.files[0].size/1024/1024 + " MB");
         //validate if file less than 850 MB
         
-         if (this.files[0].size/1024/1024 <850) {
-                       
+         if (this.files[0].size/1024/1024 < 850) {                       
              
             //read Object local file    
             var objFileReader = new FileReader();
@@ -174,9 +234,6 @@ $(document).ready(function () {
     });
 
     //works
-      
-        
-        
     
     
     });

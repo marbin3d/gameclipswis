@@ -11,184 +11,7 @@ var videoapikey="AIzaSyB7OIivHxyHW6-VFXvtOsMCJiwHpqZsic8"; //my MSVapikey
 var videoID="676ZCxkMoII"; //id of video           
 var url="https://www.googleapis.com/youtube/v3/videos?part=statistics&id="+videoID+"&key="+videoapikey;  
            
-           //video part to get comments
-          //   var urlComments="https://www.googleapis.com/youtube/v3/commentThread?part=&id="+videoID+"&key="+videoapikey;  
           
-
-/*
-            $.getJSON(url, function(data) {
-              //alert ("viewCount: " + data.items[ 0 ].statistics.viewCount);
-              console.log("viewCount: ", data.items[ 0 ].statistics.viewCount);
-                
-                 //count views of this video "id=Qq7mpb-hCBY"
-                ///$("#countViews").val()=data.items[ 0 ].statistics.viewCount;
-                var views=data.items[ 0 ].statistics.viewCount;
-                var likes=data.items[ 0 ].statistics.likeCount;
-                var dislikes=data.items[ 0 ].statistics.dislikeCount;
-                
-                $("#countViews").append("<h3>" + views +" views"+ " " + likes+" likes "+" "+dislikes+" dislikes " +"</h3>" + "<p>" +"view of this video"+"</p><hr/>");
-                
-            });   //end video API
-
- */
-
-
-
-           
-           //////////////////////
-           //Retrieve comments from video
-           
-        //     $.getJSON(urlComments, function(data) {
-            
-        //      console.log("viewCount: ", data.items[ 0 ].statistics.viewCount);
-               
-        //        var views=data.items[ 0 ].statistics.viewCount;
-        //        var likes=data.items[ 0 ].statistics.likeCount;
-        //        var dislikes=data.items[ 0 ].statistics.dislikeCount;
-                
-       //         $("#countViews").append("<h3>" + views +" views"+ " " + likes+" likes "+" "+dislikes+" dislikes " +"</h3>" + "<p>" +"view of this video"+"</p><hr/>");
-                
-      //      });   //
-           
-           
-           /////////////////////////////////
-           
-           
-           // var url2="https://www.googleapis.com/youtube/v3/videos?id="+videoID+"&key="+videoapikey+"&part=snippet,contentDetails,statistics,status,commentThread";
-          
-/*
-            var url2="https://www.googleapis.com/youtube/v3/videos?id="+videoID+"&key="+videoapikey+"&part=snippet,statistics,commentThread";
-         
-           
-            $.getJSON(url2, function(data) {    
-                
-                var snippet=data.items[0].snippet.title;
-                var commenCt=data.items[0].statistics.commentCount;
-                
-               var comments=data.items[0].commentThreads.list; //comments
-                
-                $("#snippets").append("<h3>" + snippet +"title"+ " " + commenCt+"comment Count "+"<br>"+comments+" " +"</h3>" + "<p>" +"view of this video"+"</p><hr/>");
-                
-                
-            });   //end video API snippets
-
-
-
-*/
-
-
-
-
-           /*
-            var url3="https://www.googleapis.com/youtube/v3/videos?id="+videoID+"&key="+videoapikey+"&part=snippet";
-           
-            $.getJSON(url3, function(data) {    
-                
-                var snippetname=data.items[0].snippet.name;
-                var description=data.items[0].snippet.description;
-                
-                $("#comments").append("<h3>" + snippetname +" title"+ " " + description+" description "+" " +"</h3>" + "<p>" +"view of this video"+"</p><hr/>");
-                
-                $("#comments").append("<h3>" + snippetname +" title"+ " " + description+" description "+" " +"</h3>" + "<p>" +"view of this video"+"</p><hr/>");
-                
-                
-            });   //end video API name and description
-
-*/
-
-
-
-/////////////////////////////////////////////////////////////////////////////////
-      
-      /*
-    
-      function appendResults(text) {
-        var results = document.getElementById('results');
-        results.appendChild(document.createElement('P'));
-        results.appendChild(document.createTextNode(text));
-      }
-
-      function makeRequest() {
-        var request = gapi.client.urlshortener.url.get({
-          'shortUrl': 'http://goo.gl/fbsS'
-        });
-        request.then(function(response) {
-          appendResults(response.result.longUrl);
-        }, function(reason) {
-          console.log('Error: ' + reason.result.error.message);
-        });
-      }
-           
-      var mykeyPrankvideos="AIzaSyCsjESmlY5yHGXI5sy8pdIGMhRqQ12CxOc";
-      function init() {
-        gapi.client.setApiKey(mykeyPrankvideos);//my keyProject prank videos
-        gapi.client.load('urlshortener', 'v1').then(makeRequest);
-      }
-
-      gapi.load('client', init);
-
-*/
-
-           
-      //////////////////////////////////////////////////////
-             
-/* original referenced youtube example
-// After the API loads, call a function to enable the search box.
-function handleAPILoaded() {
-  $('#search-button').attr('disabled', false);
-}
-
-// Search for a specified string.
-function search() {
-  var q = $('#query').val();
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet'
-  });
-
-  request.execute(function(response) {
-    var str = JSON.stringify(response.result);
-    $('#search-container').html('<pre>' + str + '</pre>');
-  });
-}
-
-*/
-
-
-
-
-
-
-/*container for search videos from API integration*/
-   //$('#mainpanecontentSearch').prepend(itemVideo);
-
-/*
- function handleAPILoadedx() {
-        
-         $('#searchByWordBtn').attr('disabled', false);
-     }
-    
-        
-      // Search for a specified string.
-    function searchx() {
-           // var keyword = keyword;
-            var keyword = $('#query').val();
-
-
-          var request = gapi.client.youtube.search.list({
-            q: keyword,
-            part: 'snippet'
-          });
-
-          request.execute(function(response) {
-            var str = JSON.stringify(response.result);
-            $('#mainpanecontentSearch').html('<pre>' + str + '</pre>');
-          });
-
-        }
-
-*/
-
 var resultVideos=[];
 
 function searchVideoByKeyWord() {    
@@ -434,23 +257,17 @@ function search(){
               //loop through the items
               
               $.each(data.items,function(i,videoItem){
-                  
-                   
-                     
+                      
                      //return the result function
                      var outputItemVideo=getOutput(videoItem);                  
                    
-              // $('#mainpanecontentSearch').html('<pre>' + outputItem+ '</pre>');
+                  // $('#mainpanecontentSearch').html('<pre>' + outputItem+ '</pre>');
                   
                   $('#mainpanecontentSearchByKeyWord').append(outputItemVideo);
-                  
-                  
-                  
+                 
                   // var outputItemVideoStats= getStatisticsVideo(videoItem.id.videoId);              
                   //add view counts
                   //  $('#count'+videoItem.id.videoId).append(outputItemVideoStats);
-                  
-             
                   
                                                 
               });
@@ -492,11 +309,9 @@ function getOutput(item){
     
      //var viewCount="";
     
-  //  var ret= stats.videoId;
+    //var ret= stats.videoId;
     
     //console.log("test print counts "+ getStatisticsVideo(videoId+''));
-    
-    
     
   
    // var viewCount=item.id.rating;
@@ -527,18 +342,14 @@ function getOutput(item){
     
     
     
-                   var itemListID=videoId;
+                  var itemListID=videoId;
     
-                   var FirstNameUploader=channelTitle;
+                  var FirstNameUploader=channelTitle;
     
                  var videoFrame = ' <div class="col-xs-10" class="embed-responsive embed-responsive-16by9">                                <iframe class="embed-responsive-item" src= '+sourceVideo +' width="100%" height="100%"   frameborder="0" ></iframe> </div>';
 
-                   //var videoFrame = '<div align="center" class="col-xs-12" class="embed-responsive embed-responsive-16by9"> <video class="embed-responsive-item" src= "'+sourceVideo +'"   frameborder="0"  width="100%" height="100%"   preload="metadata" controls ></video> </div>';
-    
-    // var videoFrame = '<a href= '+sourceVideo +'>'+sourceVideo+'</a>';
-    
-   
-    
+                   //var videoFrame = '<div align="center" class="col-xs-12" class="embed-responsive embed-responsive-16by9"> <video class="embed-responsive-item" src= "'+sourceVideo +'"   frameborder="0"  width="100%" height="100%"   preload="metadata" controls ></video> </div>';    
+                   // var videoFrame = '<a href= '+sourceVideo +'>'+sourceVideo+'</a>';
     
     
                     console.log(sourceVideo);
@@ -556,7 +367,7 @@ function getOutput(item){
                     
                    // var btnAddVideoToMyClips='<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="inviteSubscribe(' + videoId + ')">Add to My Clips</button>  ';
     
-    var btnAddVideoToMyClips = '<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon " data-toggle="modal" data-target=' + inviteNoMemberAddVideoToMyClips() + '  onclick=autoFillInfoYouTube("' + sourceVideo + '")>Add to My Clips </button>';
+                   var btnAddVideoToMyClips = '<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon " data-toggle="modal" data-target=' + inviteNoMemberAddVideoToMyClips() + '  onclick=autoFillInfoYouTube("' + sourceVideo + '")>Add to My Clips </button>';
     
                     
                     
@@ -566,25 +377,10 @@ function getOutput(item){
                      //integration video Item  
                      var itemVideoYouTube = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo+ viewCount+  '<label class="name">' +  FirstNameUploader  +' <br>Video published on: ' + videoDate  + '<h6>Category: ' + 'category' + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    '+modalContent+'   <div class="modal-footer"> <button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="sendNewVideoView(' + videoId + ')">Remove Clip</button> <!-- new Btn --> '+btnAddVideoToMyClips +' <button type="button" class="btn btn-default" data-dismiss="modal">Closing player</button>   </div></div></div></div><a  class="btn btn-danger  btn-sm glyphicon glyphicon-trash" href="#" id="' +videoId + '" onclick="removeVideo(' + videoId + ')" title="Remove Video"></a> </label>    <div class="break"></div></li>' ;
 
-    
-    
-    
-                
-    
-    
-    
     return itemVideoYouTube;
     
 }
 
-
-
-
-    
-//$('#count'+videoId+"" ).append("<h6>" + ret +" views"+"</h6>"+" <hr/>");
-   
-  //  var viewCountSt=   JSON.stringify(stats.videoId);
-  //  console.log("print Count From item : "+viewCountSt);
 
 
 var stats={};
@@ -597,8 +393,7 @@ function getStatisticsVideo(videoId){
     var id=videoId;
     //var urlGoogleAPIStatistics="https://www.googleapis.com/youtube/v3/videos";
     
-     var url="https://www.googleapis.com/youtube/v3/videos?part=statistics&id="+videoId+"&key="+videoapikey;  
-       
+     var url="https://www.googleapis.com/youtube/v3/videos?part=statistics&id="+videoId+"&key="+videoapikey; 
     
     
     //Get Request from API
@@ -609,42 +404,22 @@ function getStatisticsVideo(videoId){
                       
             var count=data.items[ 0 ].statistics.viewCount;
            // var count=data.items[0].viewCount;
-              
-             
-              
+          
               //loop through the items
-              
-              
+           
              var viewCount=JSON.stringify(count);
               
                stats['\"'+id+'\"']=viewCount;
-              
-               console.log(stats);
-              
-              
-            console.log(viewCount);
-              
-                       // $.each(data,function(i,videoItemStats){
+              console.log(stats);
+              console.log(viewCount);              
                      
-                     //return the result function
-                    // var outputItemVideoStats=getOutput(videoItemStats);
-              
              
             var viewCountTxt = '<a href= "#">'+viewCount+'</a>';
-          //  $('#'+id+'').prepend(viewCountTxt);
-                       
-     // $("#"+videoId).append("<h6>" + viewCount +" views"+"</h6>"+"<hr/>");
-              
-              
-       //  $("#"+id).append("<h3>" + viewCount +" views"+ " " + likes+" likes "+" "+dislikes+" dislikes " +"</h3>" + "<p>" +"view of this video"+"</p><hr/>");
-                    
+          
                         
-                  //add view counts
+             //add view counts
             $('#count'+videoId).append(data.items[ 0 ].statistics.viewCount);
-                  
-         
-              
-           return   data.items[ 0 ].statistics.viewCount ;
+             return   data.items[ 0 ].statistics.viewCount ;
                                                 
              // });
                                             
@@ -657,12 +432,8 @@ function getStatisticsVideo(videoId){
 }
     
 
-
-
-
 //JQUERY
 //////////
-
 $(document).ready(function () {    
     
      //prevent the form to be submitted
@@ -670,95 +441,8 @@ $(document).ready(function () {
        e.preventDefault();
     
     });
-   
-        
  
-    
-    
-   /*    using youtube searchlist
-/youtube/v3/youtube.search.list?q=MarioBrog&maxResults=25&part=snippet
-       // original referenced youtube example
-// After the API loads, call a function to enable the search box.
-function handleAPILoaded() {
-  $('#searchKeyWordBtn').attr('disabled', false);
-}
-
-// Search for a specified string.
-
-        
-function searchWord() {
- // var q = $('#searchKeyWord').val();
-    
-     var q = "speed";
-  var request = gapi.client.youtube.search.list({
-    q: q,
-    part: 'snippet'
-  });
-
-  request.execute(function(response) {
-      
-    //response as JSON in str 
-    var str = JSON.stringify(response.result);
-      
-    $('#mainpanecontentSearch').html('<pre>' + str + '</pre>');
-      
-  });
-}
-       
-   searchWord();
-    
-    */
-    
-
-/*
-    
-    
-   //Request metadata from Youtube
-
- function requestYouTubeMetadata (){ 
-     
-     var keyword="batman";
-    
-          gapi.client.init({
-            'apiKey': videoapikey,
-            // clientId and scope are optional if auth is not required.
-            //'clientId': 'YOUR_WEB_CLIENT_ID.apps.googleusercontent.com',
-            //'scope': 'profile',
-          }).then(function() {
-            // 3. Initialize and make the API request.
-              
-              var request = gapi.client.youtube.search.list({
-    q: keyword,
-    part: 'snippet'
-  });
-              
-            return request({
-
-
-              'path':url,
-
-
-
-            })
-          }).then(function(response) {
-
-
-            console.log(response.result);
-              
-               //response as JSON in str 
-              var str = JSON.stringify(response.result); 
-              
-              //display
-             $('#mainpanecontentSearch').html('<pre>' + str + '</pre>');
-
-
-          }, function(reason) {
-            console.log('Error: ' + reason.result.error.message);
-          });
-       
-    
-     }
-*/
+ 
     
     
     ////////////////////
@@ -805,52 +489,11 @@ function searchWord() {
                 var itemsName = "";
                 var items = [];
 
-               // $.each(data, function (key, val) {
-
-                    /*  $('#responsePrediction').append($('<div>', {                                        
-                          text: element)
-                      }));
-                      */
+             
                     
                      alert("successful info url upload");
 
-                    //retrive each video info
-                    //for (m in val) {
-                       
-
-                        // var usrId = value[m].userID;
-                       // var fname = val[m].name;
-                       // var videoId = val[m].videoId;
-                        //var userId = val[m].userId;
-                        // var predictedRating =  value[m].predictedRating;
-                        
-                         //var resp = val[m].success;
-
-                        //every record                 
-                        //items.push("<li id='" + key + "'>" + JSON.stringify(val) + "</li>");
-                        // console.log(fname);
-
-                        //itemsName = itemsName + JSON.stringify(val + " . ");
-                        //append to body or some div 
-
-                        //if (val == "false") {
-                            //$("#responsePrediction").html("Please, check all fields ");
-                             // alert("error info url upload");
-
-                       // } else {
-                            //$("#responsePrediction").html(" <div style='color:blue'>JSON Data from recommender: </div> " + val[m].name);
-                            //console.log(val[m].name);
-                            //alert("successful info url upload");
-                       // }
-                        
-                        
-
-                   // } //end for      
-
-
-
-               // });
-                
+     
                 
             },
 

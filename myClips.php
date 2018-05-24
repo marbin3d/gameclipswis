@@ -53,11 +53,6 @@ $fnameUserActive="General User";
         <link href="css/style.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 
-
-        <!-- Custom Fonts 
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
-
-
     </head>
 
     <body>
@@ -74,7 +69,7 @@ $fnameUserActive="General User";
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" >&#9776 </span>
+                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;">&#9776 </span>
                     
                     <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
                     <a class="navbar-brand" id="activeUser">Creator Page</a>
@@ -236,18 +231,18 @@ $fnameUserActive="General User";
                     <div class="row">
                         <div style="background-color:transparent ;">
                         <div class="panel-heading" style="margin-top:50px; background-image:url(images/myclipsbackground.jpg);">
-                        <div class="panel-body" style="width:100%;">
-                        <div class="col-md-2" style="margin-left:35%;">
-                            <div >
+                        <div class="panel-body" style="margin-left:35%; margin-right:31%; width:100%;">
+                        <div class="col-md-2">
+                            <div class="text-left">
 
-                                <div class="button-wrapper">
+                                <div class="button-wrapper" >
                                     <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip">Add new Clip</button>
                                 </div>
 
                             </div>
 
                         </div>
-                        <div class="col-md-2" >
+                        <div class="col-md-2">
                            
                             <div class="button-wrapper">
                                 <button type="button" class="btn btn-success btn-md" id="showFavourites">Show Favourites</button>
@@ -422,12 +417,12 @@ $fnameUserActive="General User";
                                 </div>
                                 -->
                                     <div class="form-group">
-                                        
-                                        
-                                            <label>Description</label> 
+                                        <div class="col-md-2"></div>
+                                        <div class="col-md-8">
+                                            <h3>Description<small></small></h3>
 
                                             <textarea class="form-control" rows="5" name="description" id="description" placeholder="Describe your video"></textarea>
-                                        
+                                        </div>
                                         <div class="col-md-2"></div>
                                     </div>
 

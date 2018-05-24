@@ -90,8 +90,13 @@ if(isset($_SESSION['source'])){
                 <div id='menuGameClips'>
                     <ul class="nav navbar-middle top-nav ">
                         <li>
-                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips" />
-                            <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
+                            <input id="searchKeyWordGameClips" type="text" placeholder="Search on Game Clips" />
+                             <!--
+                            <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">-->                            
+                             <button class="btn btn-md btn-primary" id="searchByWordBtnGameClips" onclick="searchOnGameClipsByWord()">Search</button>
+                            
+                            
+                            
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
@@ -109,7 +114,9 @@ if(isset($_SESSION['source'])){
                     <ul class="nav navbar-middle top-nav ">
                         <li>
                             <input id="query" value='' type="text" placeholder="Search on Youtube" />
+                            
                             <button class="btn btn-md btn-primary" id="searchByWordBtn" onclick="search()">Search</button>
+                            
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
@@ -212,10 +219,8 @@ if(isset($_SESSION['source'])){
                                 <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
                                 -->
 
-
-
                                 <!--
-                             <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
+                               <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
                             </fieldset>
 
@@ -449,7 +454,7 @@ if(isset($_SESSION['source'])){
                                             <!-- Submit form Button to update info-->
                                             <input type="submit" class="btn btn-md btn-primary" value="Subscribe" id="submit-addUserBtn">
                                             <!--
-                             <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
+                                            <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
                                         </fieldset>
                                     </form>
@@ -500,7 +505,7 @@ if(isset($_SESSION['source'])){
                                             <input type="submit" class="btn btn-md btn-primary" value="log in" id="submit-loginUserBtn">
 
                                             <!--
-                             <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
+                                            <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
                                         </fieldset>
                                     </form>
@@ -687,11 +692,14 @@ if(isset($_SESSION['source'])){
 
         </div>
                
-                <!-- /#wrapper -->
-               
+                <!-- Scripts js -->              
                 
                 <script src="js/index.js"></script> 
-                            
+                
+                <!-- search  on GameClips --> 
+                 <script src="js/searchOnGameClips.js"></script> 
+                 
+                <!-- search  on YouTube -->                           
                 <script src="js/searchVideoByKeyWord.js"></script>
                 <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
     
