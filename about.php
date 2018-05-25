@@ -257,7 +257,7 @@ if(isset($_SESSION['source'])){
                 <div class="content">
                   <h1>Don't just play and watch, Join in!</h1>
                     <img src='images/logo.png' height="352" width="602">
-                    <p>Welcome to a community where millions of people and thousands of interests collide in a beautiful explosion of video games, pop culture, and conversation. From classic tv show marathons to esports tournaments, if you can imagine it, it’s probably on Game Clips right now.</p>
+                    <p>Welcome to a community where millions of people and thousands of interests collide in a beautiful explosion of video games, pop culture, and conversation. From classic tv show marathons to sport tournaments, if you can imagine it, it’s probably on Game Clips right now.</p>
                   
                 </div>
                 <div class='content2'>
