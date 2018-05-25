@@ -97,7 +97,7 @@ if(isset($_SESSION['source'])){
                             
                             
                             
-                            <button id="GameClips" class="searchGameClips">
+                            <button id="GameClips" class="searchGameClips" style="background:rgb(38,121,196) ;">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
                             </button>
@@ -121,7 +121,7 @@ if(isset($_SESSION['source'])){
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
                             </button>
-                            <button id="Youtube" class="searchYoutube">
+                            <button id="Youtube" class="searchYoutube"  style="background:rgb(38,121,196) ;">
                                 <img src="images/youtubeicon.png" height="20" width="20">
                                 Youtube
                             </button>
@@ -148,7 +148,7 @@ if(isset($_SESSION['source'])){
 
 
                     <!--active user  style="display:none;"-->
-                    <li class="dropdown">
+                    <li class="dropdown" style="display:none;">
                         <a href="#" class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown">
                            <i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -177,7 +177,7 @@ if(isset($_SESSION['source'])){
 
                     <ul id="slidemenu">
                         <li>
-                            <a href="index.php"><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
+                            <a href="index.php" style="background:rgb(38,121,196);"><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
                         </li>
                         <li>
                             <a href="about.php"><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
@@ -374,25 +374,7 @@ if(isset($_SESSION['source'])){
                         </div>
 
 
-                        <div class="header">
-                            <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
-                                <span  class="fa fa-users fa-2x principal-title"></span> Trendding Clips
-                            </h3>
-                            <div class="jumbotron  list-content">
-                                <ul class="list-group">
-                                    <!-- clips from DB-->
-                                    <span id="mainpanecontentTrend">	
-                            </span>
-                                    <!-- from DB-->
-                                    <li href="#" class="list-group-item text-left">
-                                        <a class="btn btn-block btn-primary">
-                                            <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
-                                        </a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 </div>
@@ -684,8 +666,9 @@ if(isset($_SESSION['source'])){
                     <button type="button" class="close closeWelcome" data-dismiss="modal">&times;</button>
                     <div class='panel-body'>
                         <h3 class='welcometext'>Welcome to GameClips</h3>
-                        <p>A website dedicated to Video Games fans.</p>
-                        <p>Add your own videos, follow other gamers and like and save your favourite videos!</p>
+                        <p style="margin-left:10%; color:white">A website dedicated to Video Games fans.</p>
+                        <p style="margin-left:8%; text-align:center; color:white">Add your own videos, follow other gamers and like and save your favourite videos!</p>
+                        <button type="button" data-dismiss="modal" style="margin-left:35%; background-color:white;"><a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser" >Subscribe</a></button>
                     </div>
                     <!-- END Modal Welcome by Sofia -->
                 </div>

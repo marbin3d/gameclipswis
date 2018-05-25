@@ -80,9 +80,14 @@ $fnameUserActive="General User";
                 <div id='menuGameClips'>
                     <ul class="nav navbar-middle top-nav ">
                         <li>
-                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips" />
-                            <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
-                            <button id="GameClips" class="searchGameClips">
+                            <input id="searchKeyWordGameClips" type="text" placeholder="Search on Game Clips" />
+                             <!--
+                            <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">-->                            
+                             <button class="btn btn-md btn-primary" id="searchByWordBtnGameClips" onclick="searchOnGameClipsByWord()">Search</button>
+                            
+                            
+                            
+                            <button id="GameClips" class="searchGameClips" style="background:rgb(38,121,196) ;">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
                             </button>
@@ -99,12 +104,14 @@ $fnameUserActive="General User";
                     <ul class="nav navbar-middle top-nav ">
                         <li>
                             <input id="query" value='' type="text" placeholder="Search on Youtube" />
+                            
                             <button class="btn btn-md btn-primary" id="searchByWordBtn" onclick="search()">Search</button>
+                            
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
                             </button>
-                            <button id="Youtube" class="searchYoutube">
+                            <button id="Youtube" class="searchYoutube"  style="background:rgb(38,121,196) ;">
                                 <img src="images/youtubeicon.png" height="20" width="20">
                                 Youtube
                             </button>
@@ -114,13 +121,12 @@ $fnameUserActive="General User";
                 </div>
 
 
-
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-nav navbar-right ">
 
 
                     <li>
-                        <a href="myClips.php" class="btn btn-alert btn-md">My Clips</a>
+                        <a href="myClips.php" class="btn btn-alert btn-md" style="background:rgb(38,121,196);">My Clips</a>
                     </li>
                     
                     <li>
@@ -130,8 +136,8 @@ $fnameUserActive="General User";
 
                     <!-- End Top Menu Items -->
                   
-                    <!-- drop down Active User style="display:none;"-->
-                    <li class="dropdown" >
+                    <!-- drop down Active User -->
+                    <li class="dropdown" style="display:none;">
                             <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"  id="creatorFullName"><i class="fa fa-user"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
 
@@ -231,26 +237,16 @@ $fnameUserActive="General User";
                     <div class="row">
                         <div style="background-color:transparent ;">
                         <div class="panel-heading" style="margin-top:50px; background-image:url(images/myclipsbackground.jpg);">
-                        <div class="panel-body" style="margin-left:35%; margin-right:31%; width:100%;">
-                        <div class="col-md-2">
-                            <div class="text-left">
+                        <div class="panel-body">
+                        <div class="col-md-2" >
+                            <div class="text-left" >
 
-                                <div class="button-wrapper" >
-                                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip">Add new Clip</button>
-                                </div>
+                                <h1 style="margin-left:35%; width:100%; color:white;"><?php echo $fnameUserActive; ?><b> Clips </b></h1>
 
                             </div>
 
                         </div>
-                        <div class="col-md-2">
-                           
-                            <div class="button-wrapper">
-                                <button type="button" class="btn btn-success btn-md" id="showFavourites">Show Favourites</button>
-
-                            </div>
-                            <div class="clearfix"></div>
-
-                        </div>
+                        
 
                     </div>
                     </div>
@@ -273,7 +269,7 @@ $fnameUserActive="General User";
 
                     <div class="header">
                         <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
-                            Game Clips
+                            My Game Clips
                             <span class="fa fa-users fa-2x principal-title"></span>
 
                         </h3>
@@ -281,6 +277,13 @@ $fnameUserActive="General User";
 
 
                     <div class="jumbotron  list-content">
+                        <div class="text-left">
+
+                                <div class="button-wrapper" >
+                                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip"><strong>Add Clip</strong></button>
+                                </div>
+
+                            </div>
 
                         <!-- List of Clips added by Active user-->
                         <ul class="list-group">
@@ -294,7 +297,7 @@ $fnameUserActive="General User";
                             <!-- My clips AddedClipsList from DB-->
                             
                             <div>
-                                My video Clips uploaded
+                                
                                 <hr>
                                 <span id="mainpanecontent"> </span>
                             </div>
@@ -425,12 +428,11 @@ $fnameUserActive="General User";
                                 </div>
                                 -->
                                     <div class="form-group">
-                                        <div class="col-md-2"></div>
-                                        <div class="col-md-8">
-                                            <h3>Description<small></small></h3>
+                                        
+                                            <label for="name">Description</label>
 
                                             <textarea class="form-control" rows="5" name="description" id="description" placeholder="Describe your video"></textarea>
-                                        </div>
+                                        
                                         <div class="col-md-2"></div>
                                     </div>
 

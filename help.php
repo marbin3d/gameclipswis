@@ -453,15 +453,6 @@ if(isset($_SESSION['source'])){
                 </div>
                 <!-- end loginUser -->
                 
-            <!-- Modal Welcome by Sofia -->
-            <div class="modal fade" id="welcomeModal" role="dialog">
-              <button type="button" class="close closeWelcome" data-dismiss="modal">&times;</button>
-              <div class='welcomecontent'>
-                  <h3 class='welcometext'>Welcome to GameClips</h3>
-                  <p>A website dedicated to Video Games fans.</p>
-                  <p>Add your own videos, follow other gamers and like and save your favourite videos!</p>
-            </div>
-            <!-- END Modal Welcome by Sofia -->
       
     
   </div>
