@@ -78,8 +78,8 @@ if(isset($_SESSION['source'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;" >&#9776 </span>
-                    
+                    <span id="myBtn" class='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:30px;">&#9776 </span>
+
                     <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
 
                     <a class="navbar-brand" id="activeUser">
@@ -88,18 +88,20 @@ if(isset($_SESSION['source'])){
 
                     <!--Retrieve active user-->
 
-
-
-
                 </div>
 
                 <!-- Top Menu Items -->
                 <div id='menuGameClips'>
                     <ul class="nav navbar-middle top-nav ">
                         <li>
-                            <input id="searchKeyWord" type="text" placeholder="Search on Game Clips" />
-                            <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
-                            <button id="GameClips" class="searchGameClips">
+                            <input id="searchKeyWordGameClips" type="text" placeholder="Search on Game Clips" />
+                             <!--
+                            <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">-->                            
+                             <button class="btn btn-md btn-primary" id="searchByWordBtnGameClips" onclick="searchOnGameClipsByWord()">Search</button>
+                            
+                            
+                            
+                            <button id="GameClips" class="searchGameClips" style="background:rgb(38,121,196) ;">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
                             </button>
@@ -116,12 +118,14 @@ if(isset($_SESSION['source'])){
                     <ul class="nav navbar-middle top-nav ">
                         <li>
                             <input id="query" value='' type="text" placeholder="Search on Youtube" />
+                            
                             <button class="btn btn-md btn-primary" id="searchByWordBtn" onclick="search()">Search</button>
+                            
                             <button id="GameClips" class="searchGameClips">
                                 <img src="images/diamond.png" height="20" width="10">
                                 Game Clips
                             </button>
-                            <button id="Youtube" class="searchYoutube">
+                            <button id="Youtube" class="searchYoutube"  style="background:rgb(38,121,196) ;">
                                 <img src="images/youtubeicon.png" height="20" width="20">
                                 Youtube
                             </button>
@@ -142,43 +146,45 @@ if(isset($_SESSION['source'])){
 
 
                     <!--Login -->
-                    <li >
+                    <li>
                         <a type="text" class="btn btn-alert btn-md " data-toggle="modal" data-target="#loginUser">Login</a>
                     </li>
 
 
-                    <!--active user-->
+                    <!--active user  style="display:none;"-->
                     <li class="dropdown" style="display:none;">
-                            <a href="#"  class="dropdown-toggle btn btn-alert btn-md " data-toggle="dropdown"> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
+                        <a href="#" class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown">
+                           <i class="fa fa-user" id="creatorFullName"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
 
-                                <!--active user email-->
-                                <li>
-                                    <a href="#" id="activeEmail">
-                                        "<?php echo $emailUserActive; ?>"
+                            <!--active user email-->
+                            <li>
+                                <a href="#" id="activeEmail">
+                                       "<?php echo $emailUserActive; ?>"
+                                      
                                     </a>
-                                </li>
+                            </li>
 
-                                <li class="divider"></li>
+                            <li class="divider"></li>
 
-                                <li>
-                                    <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                                </li>
-                            </ul>
-                        </li>
+                            <li>
+                                <a href="php/logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            </li>
+                        </ul>
+                    </li>
                 </ul>
 
 
                 <!-- SLIDE MENU-->
                 <div id="mySidenav" class="sidenav">
-                    
+
 
                     <ul id="slidemenu">
                         <li>
                             <a href="index.php"><span class="glyphicon glyphicon-home menuicon"></span>Home</a>
                         </li>
                         <li>
-                            <a href="about.php" ><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
+                            <a href="about.php" style="background:rgb(38,121,196);"><span class="glyphicon glyphicon-comment menuicon"></span>About</a>
                         </li>
                         <li>
                             <a href="help.php"><span class="glyphicon glyphicon-tasks menuicon"></span>Help </a>
@@ -205,8 +211,8 @@ if(isset($_SESSION['source'])){
                                         <a href="dashboardAbout.php"><span class="glyphicon glyphicon-flag menuicon"></span>Adventure </a>
                                     </li>
                                 </ul>
-                                
-                               <!-- Search by category
+
+                                <!-- Search by category
                                 <div class="form-group">
                                     <label for="name"></label>
                                     <input class="form-control" id="searchCategory" placeholder="game category" name="searchCategory" type="text">
@@ -216,18 +222,16 @@ if(isset($_SESSION['source'])){
                                 <!-- Submit form Button to Search by title
                                 <input type="submit" class="btn btn-md btn-primary" value="Search" id="submit-searchBtn">
                                 -->
-                                
-                                
 
                                 <!--
-                             <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
+                               <button class="btn btn-lg btn-success btn-block" type="submit" id="submit-addClipBtn" onclick="">Submit</button>-->
 
                             </fieldset>
 
                         </form>
 
                         <!-- analyticsView.php -->
-                        <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
+                        <a id="filterByCategory">MORE FROM GAME CLIPS</a>
                         <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 

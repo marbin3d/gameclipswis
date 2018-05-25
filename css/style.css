@@ -296,7 +296,7 @@ top:20px ;
 }
 
 
-#searchKeyWord{
+#searchKeyWordGameClips{
     width:300px;
     height:34px;
     line-height:35px;
@@ -309,7 +309,7 @@ top:20px ;
 }
 
 #query{
-    width:400px;
+    width:300px;
     height:34px;
     line-height:35px;
     background:#fff;
