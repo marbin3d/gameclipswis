@@ -152,12 +152,13 @@ top:20px ;
 
 }
 
-#addClip,#showFavourites{
+#addClip{
     position: relative !important;
     top:10px;
     padding: 10px !important;
-    background-color: rgb(38,121,196,0.8);
-    border: 1px solid rgb(38,121,196);
+    background-color: rgb(38,121,196);
+    color: white;
+    border: 1px solid rgb(38,121,196,0.5);
     
     
     
@@ -165,7 +166,8 @@ top:20px ;
 }
 
 #addClip:hover{
-    background-color: rgb(38,121,196);
+    background-color: rgb(38,121,196,0.5);
+    border: 1px solid rgb(38,121,196);
 }
 #showFavourites:hover{
     background-color: rgb(38,121,196);
@@ -307,7 +309,6 @@ top:20px ;
     font-weight:bold;
     border-radius: 4px;
 }
-
 #query{
     width:300px;
     height:34px;
