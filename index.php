@@ -228,7 +228,7 @@ if(isset($_SESSION['source'])){
 
                         <!-- analyticsView.php -->
                         <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
-                        <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
+                        <li style="margin-top:10px;"><a href="#"> <span id="analyticsBtn" class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 
 
@@ -376,7 +376,7 @@ if(isset($_SESSION['source'])){
 
                         <div class="header">
                             <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
-                                <span class="fa fa-users fa-2x principal-title"></span> Trendding Clips
+                                <span  class="fa fa-users fa-2x principal-title"></span> Trendding Clips
                             </h3>
                             <div class="jumbotron  list-content">
                                 <ul class="list-group">

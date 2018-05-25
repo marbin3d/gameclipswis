@@ -197,9 +197,6 @@ function retrieveVideosMyClips(emailUsrActive) {
                     
                     
                     
-                    
-                    
-                    
 
                     $('#mainpanecontentSearch').prepend(itemVideo);
 
@@ -228,14 +225,91 @@ function inviteSubscribe(videoid) {
 }
 
 
+
+// Analytics
+
+function retrieveAnalyticsRatings(emailUsrActive) {   
+    
+    var rpReqUrl = "../php/analyticsRatings.php";
+    
+    
+    console.log("send data: " + emailUsrActive.replace("\n",""));
+    
+    console.log(emailUsrActive+"");
+
+    $.post(rpReqUrl,
+
+        //data
+        {
+            //activeUser and remove white spaces around the email
+           userEmail: JSON.stringify(emailUsrActive)
+        },
+
+
+        function (dataClipsServerDBReply, status) {
+
+            //loop OVER JSON OBJECT
+            $.each(dataClipsServerDBReply, function (index, value) {               
+             console.log(value.length);
+                
+                //retrive each video info
+                for (m in value) {
+
+                   // var usrId = value[m].userID;
+                    var videoTitle = value[m].title; 
+                    videoTitle="Title:  "+videoTitle;
+                                       
+                    
+                    var videoId = value[m].videoID;
+                    var itemListID = videoId  + "";
+                    
+                    //ratings aggregations by videoId
+                     var ratingsAdded = value[m].ratingsAdded;
+                   
+                    console.log(videoTitle);
+                     console.log(ratingsAdded);
+                
+                   //var itemTable='<tr><th scope="row">'+index+' </tr> <td>'+videoId+' </td>'+' </tr> <td>'+videoTitle+' </td>'+' </tr> <td>'+ratingsAdded+' </td>';
+                    
+                     var itemTable='<div>'+index+' </div> <div>'+videoId+' </div>'+' </div> <div>'+videoTitle+' </div>'+' </div> <div>'+ratingsAdded+' </div>';
+                    
+                    
+                    console.log(ratingsAdded);
+
+                    $('#mainpaneAnalytics').prepend(itemTable);
+
+                }
+
+                //horizontal separator
+                $('#mainpaneAnalytics').prepend("<br>");
+
+            });
+
+        },
+        'json');
+
+} //end  analytics
+
+
+
+//////////////////////////////////////////////////////
+
+
 $(document).ready(function () {    
    
+   //retrieve videos from subscriber
+   retrieveVideosMyClips(emailUser);
     
-   retrieveVideosMyClips(emailUser); 
     
-   // var emailUser1  = $('#activeEmail').val()+"";
-     /*load Videos in myClips */
-     //retrieveVideos( emailUser1);
+    //Retrieve analytics    
+   $('#analyticsBtn').click(function (e) {
+
+        e.preventDefault();
+    
+       retrieveAnalyticsRatings(emailUser);
+       
+       }); 
+    
     
    
     /// file size validation less than 850 MB
@@ -266,8 +340,11 @@ $(document).ready(function () {
         }
 
     });
-
-    //works
+   
+    
+    
+    
+    
     
     
     });

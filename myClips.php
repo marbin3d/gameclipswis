@@ -212,7 +212,7 @@ $fnameUserActive="General User";
 
                         <!-- analyticsView.php -->
                         <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
-                        <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
+                        <li style="margin-top:10px;"><a href="#"> <span id="analyticsBtn" class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 
 
@@ -284,18 +284,26 @@ $fnameUserActive="General User";
 
                         <!-- List of Clips added by Active user-->
                         <ul class="list-group">
+                            
+                             <div>
+                               <!-- Analytics-->
+                                <hr>
+                                <span id="mainpaneAnalytics"> </span>
+                            </div>
 
                             <!-- My clips AddedClipsList from DB-->
-
+                            
                             <div>
-                                My clips added --
+                                My video Clips uploaded
                                 <hr>
                                 <span id="mainpanecontent"> </span>
                             </div>
+                            
+                            
 
 
                             <!-- Clips to be added from DB-->
-                            <div> All clips
+                            <div> 
                                 <span id="mainpanecontentSearch">	
                             </span>
                             </div>
