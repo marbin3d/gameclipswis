@@ -69,7 +69,7 @@ $fnameUserActive="General User";
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;">&#9776 </span>
+                    <span id="myBtn" class ='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:30px;">&#9776 </span>
                     
                     <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
                     <a class="navbar-brand" id="activeUser">Creator Page</a>
@@ -121,6 +121,7 @@ $fnameUserActive="General User";
                 </div>
 
 
+
                 <!-- Top Menu Items -->
                 <ul class="nav navbar-nav navbar-right ">
 
@@ -136,7 +137,7 @@ $fnameUserActive="General User";
 
                     <!-- End Top Menu Items -->
                   
-                    <!-- drop down Active User -->
+                    <!-- drop down Active User style="display:none;"-->
                     <li class="dropdown" style="display:none;">
                             <a href="#"  class="dropdown-toggle btn btn-alert btn-md" data-toggle="dropdown"  id="creatorFullName"><i class="fa fa-user"></i> <?php echo $fnameUserActive; ?><b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -218,7 +219,7 @@ $fnameUserActive="General User";
 
                         <!-- analyticsView.php -->
                         <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
-                        <li style="margin-top:10px;"><a href="#"> <span id="analyticsBtn" class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
+                        <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 
 
@@ -237,16 +238,26 @@ $fnameUserActive="General User";
                     <div class="row">
                         <div style="background-color:transparent ;">
                         <div class="panel-heading" style="margin-top:50px; background-image:url(images/myclipsbackground.jpg);">
-                        <div class="panel-body">
-                        <div class="col-md-2" >
-                            <div class="text-left" >
+                        <div class="panel-body" >
+                        <div class="col-md-2" style="margin-left:35%; ">
+                            <div class="text-left">
 
-                                <h1 style="margin-left:35%; width:100%; color:white;"><?php echo $fnameUserActive; ?><b> Clips </b></h1>
+                                <div class="button-wrapper" >
+                                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip">Add new Clip</button>
+                                </div>
 
                             </div>
 
                         </div>
-                        
+                        <div class="col-md-2">
+                           
+                            <div class="button-wrapper">
+                                <button type="button" class="btn btn-success btn-md" id="showFavourites">Show Favourites</button>
+
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
 
                     </div>
                     </div>
@@ -269,7 +280,7 @@ $fnameUserActive="General User";
 
                     <div class="header">
                         <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
-                            My Game Clips
+                            Game Clips
                             <span class="fa fa-users fa-2x principal-title"></span>
 
                         </h3>
@@ -277,36 +288,21 @@ $fnameUserActive="General User";
 
 
                     <div class="jumbotron  list-content">
-                        <div class="text-left">
-
-                                <div class="button-wrapper" >
-                                    <button type="button" class="btn btn-success btn-md" data-toggle="modal" data-target="#AddClip" id="addClip"><strong>Add Clip</strong></button>
-                                </div>
-
-                            </div>
 
                         <!-- List of Clips added by Active user-->
                         <ul class="list-group">
-                            
-                             <div>
-                               <!-- Analytics-->
-                                <hr>
-                                <span id="mainpaneAnalytics"> </span>
-                            </div>
 
                             <!-- My clips AddedClipsList from DB-->
-                            
+
                             <div>
-                                
+                                My clips added --
                                 <hr>
                                 <span id="mainpanecontent"> </span>
                             </div>
-                            
-                            
 
 
                             <!-- Clips to be added from DB-->
-                            <div> 
+                            <div> All clips
                                 <span id="mainpanecontentSearch">	
                             </span>
                             </div>
@@ -428,8 +424,7 @@ $fnameUserActive="General User";
                                 </div>
                                 -->
                                     <div class="form-group">
-                                        
-                                            <label for="name">Description</label>
+                                            <label for="name">Description:</label>
 
                                             <textarea class="form-control" rows="5" name="description" id="description" placeholder="Describe your video"></textarea>
                                         

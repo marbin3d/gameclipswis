@@ -74,7 +74,7 @@ if(isset($_SESSION['source'])){
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                    <span id="myBtn" class='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:17px;">&#9776 </span>
+                    <span id="myBtn" class='navbar-brand' style="font-size:30px;cursor:pointer;width:40px; padding-top: 28px; padding-left:17px;padding-right:30px;">&#9776 </span>
 
                     <a class="navbar-brand" href="index.php"><img src='images/logo.png' height="75" width="200"></a>
 
@@ -228,7 +228,7 @@ if(isset($_SESSION['source'])){
 
                         <!-- analyticsView.php -->
                         <a id="filterByCategory"><i class="fa fa-fw fa-dashboard"></i>MORE FROM GAME CLIPS</a>
-                        <li style="margin-top:10px;"><a href="#"> <span id="analyticsBtn" class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
+                        <li style="margin-top:10px;"><a href="#"> <span class="glyphicon glyphicon-circle-arrow-down menuicon"></span>Analytics</a></li>
                     </ul>
 
 
@@ -374,7 +374,25 @@ if(isset($_SESSION['source'])){
                         </div>
 
 
-                        
+                        <div class="header">
+                            <h3 class="text-muted prj-name" style="font-family:'Bangers'; color:white;">
+                                <span class="fa fa-users fa-2x principal-title"></span> Trendding Clips
+                            </h3>
+                            <div class="jumbotron  list-content">
+                                <ul class="list-group">
+                                    <!-- clips from DB-->
+                                    <span id="mainpanecontentTrend">	
+                            </span>
+                                    <!-- from DB-->
+                                    <li href="#" class="list-group-item text-left">
+                                        <a class="btn btn-block btn-primary">
+                                            <i class="glyphicon glyphicon-refresh"></i> Load more Clips...
+                                        </a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 </div>
@@ -668,7 +686,7 @@ if(isset($_SESSION['source'])){
                         <h3 class='welcometext'>Welcome to GameClips</h3>
                         <p style="margin-left:10%; color:white">A website dedicated to Video Games fans.</p>
                         <p style="margin-left:8%; text-align:center; color:white">Add your own videos, follow other gamers and like and save your favourite videos!</p>
-                        <button type="button" data-dismiss="modal" style="margin-left:35%; background-color:white;"><a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser" >Subscribe</a></button>
+                        <a type="text" class="btn btn-alert btn-md" data-toggle="modal" data-target="#registerUser" style="margin-left:35%; background-color:white;">Subscribe</a>
                     </div>
                     <!-- END Modal Welcome by Sofia -->
                 </div>

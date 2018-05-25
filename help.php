@@ -264,65 +264,80 @@ if(isset($_SESSION['source'])){
                           <div class="panel panel-default panel-help">
                             <a href="#opret-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
                               <div class="panel-heading">
-                                <h2 style="color: white;">How do I edit my profile?</h2>
+                                <h2 style="color: white;">How do I upload videos?</h2>
                               </div>
                             </a>
                             <div id="opret-produkt" class="collapse in">
                               <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                                  <p>Sign in to Game Clips.</p>
+                                <p>Click on My cLips  at the top of the page.</p>
+                                  <p>Select the video you'd like to upload from your computer.</p> 
+                                    <p>As the video is uploading, you can edit both the basic information and the advanced settings of the video.You can have a title up to 100 characters and a description up to 5,000 characters. 
+                                    Click Publish to finish uploading a public video to Game Clips.</p>
+    
                               </div>
                             </div>
                           </div>
                           <div class="panel panel-default panel-help">
                             <a href="#rediger-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
                               <div class="panel-heading">
-                                <h2 style="color: white;">How do I upload a new profile picture?</h2>
+                                <h2 style="color: white;">How do I Sign in ?</h2>
                               </div>
                             </a>
                             <div id="rediger-produkt" class="collapse">
                               <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                                  <p>Go to Game Clips.com.</p>
+                                  <p>In the top right, click Sign in, if you don't have an account, click SUBSCRIBE.</p>
+                                    <p>Fill the information and Click the SIGN IN Button.</p>
                               </div>
                             </div>
                           </div>
                           <div class="panel panel-default panel-help">
                             <a href="#ret-pris" data-toggle="collapse" data-parent="#help-accordion-1">
                               <div class="panel-heading">
-                                <h2 style="color: white;">Can I change my phone number?</h2>
+                                <h2 style="color: white;">What is Game Clips Policy?</h2>
                               </div>
                             </a>
                             <div id="ret-pris" class="collapse">
                               <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                                <p>We want you to use YouTube without fear of being subjected to malicious harassment. In cases where harassment crosses the line into a malicious attack it can be reported and will be removed. In other cases, users may be mildly annoying or petty and should simply be ignored.</p>
+
+                                <h3>Harassment may include :</h3>
+
+                                  <p>Abusive videos, comments, messages</p>
+                                <p>Revealing someone’s personal information, including sensitive personally identifiable information such as social security numbers, passport numbers, or bank account numbers.</p>
+                                  <p>Maliciously recording someone without their consent</p>
+                                  <p>Deliberately posting content in order to humiliate someone</p>
+                                <p>Making hurtful and negative comments/videos about another person</p>
+                                <p>Unwanted sexualization, which encompasses sexual harassment or sexual bullying in any form</p>
+                                <p>Incitement to harass other users or creators</p>
                               </div>
                             </div>
                           </div>
                           <div class="panel panel-default panel-help">
                             <a href="#slet-produkt" data-toggle="collapse" data-parent="#help-accordion-1">
                               <div class="panel-heading">
-                                <h2 style="color: white;">Where do I change my privacy settings?</h2>
+                                <h2 style="color: white;">How does the recommended features work?</h2>
                               </div>
                             </a>
                             <div id="slet-produkt" class="collapse">
                               <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                                <p>The system implements a recommender system based on collaborative filtering based on user rating of videos.
+                                Rating values go from a range 1-5. If the user has not rated a video, the video takes a value of 0.This is set by default when a video is uploaded. When the user rates a particular video, the rating value is updated in the database. Therefore the value of 0 means a non-rated video within the videos table.
+                                The users and rating are extracted from the database to create a user-rating video matrix, which created using a PHP function. This matrix is sent to the recommended system computation which outcomes recommended videos to be returned back to the correspondent user.
+                                  </p>
                               </div>
                             </div>
                           </div>
                           <div class="panel panel-default panel-help">
                             <a href="#opret-kampagne" data-toggle="collapse" data-parent="#help-accordion-1">
                               <div class="panel-heading">
-                                <h2 style="color: white;">What is this?</h2>
+                                <h2 style="color: white;">What is Analytics?</h2>
                               </div>
                             </a>
                             <div id="opret-kampagne" class="collapse">
                               <div class="panel-body">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus nesciunt ut officiis accusantium quisquam minima praesentium, beatae fugit illo nobis fugiat adipisci quia distinctio repellat culpa saepe, optio aperiam est!</p>
-                                <p><strong>Example: </strong>Facere, id excepturi iusto aliquid beatae delectus nemo enim, ad saepe nam et.</p>
+                                <p>This feature shows videos statistics, aggregations. General statistics like view counts by category, language, age range, count of comments.</p>
                               </div>
                             </div>
                           </div>
@@ -453,6 +468,15 @@ if(isset($_SESSION['source'])){
                 </div>
                 <!-- end loginUser -->
                 
+            <!-- Modal Welcome by Sofia -->
+            <div class="modal fade" id="welcomeModal" role="dialog">
+              <button type="button" class="close closeWelcome" data-dismiss="modal">&times;</button>
+              <div class='welcomecontent'>
+                  <h3 class='welcometext'>Welcome to GameClips</h3>
+                  <p>A website dedicated to Video Games fans.</p>
+                  <p>Add your own videos, follow other gamers and like and save your favourite videos!</p>
+            </div>
+            <!-- END Modal Welcome by Sofia -->
       
     
   </div>

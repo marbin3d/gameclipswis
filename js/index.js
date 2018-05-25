@@ -107,18 +107,12 @@ function retrieveVideos(emailUsrActive) {
 
                     // var usrId = value[m].userID;
                     var videoTitle = value[m].title;
-                    videoTitle="Title:  "+videoTitle;
-                    
                     var sourceVideo = value[m].sourceLinkVideo + "";
                     var viewsVideo = value[m].views;
-                    
-                    
-                    //author is the email
+
                     var videoUploadByAuthor = value[m].videoUploadBy;
                     var dateUploadVideo = value[m].videoDateUpload;
                     var categoryVideo = value[m].category;
-                    
-                    var descriptionVideo = value[m].description;
 
                     var videoId = value[m].videoID;
                     var itemListID = videoId + "";
@@ -149,7 +143,7 @@ function retrieveVideos(emailUsrActive) {
 
                     /*to define*/
                     var videoFrame = "video frame here";
-                    var additionalDetails = " " + descriptionVideo;
+                    var additionalDetails = "video additional details";
 
                     var dateVideo = dateUploadVideo;
 
@@ -173,12 +167,12 @@ function retrieveVideos(emailUsrActive) {
 
                     var btnPlayVideo = '<button style="margin-right: 5px;" type="button" class="btn btn-info btn-sm glyphicon glyphicon-play-circle" data-toggle="modal" data-target="#' + itemListID + '" title="Game Clips Player" onclick="saveActiveVideo(' + videoId + ')" > ' + pictDefault + '</button>';
 
-                    var btnAddVideoToMyClips = '<button style="margin-right: 5px;" type="button" class="btn btn-primary btn-sm glyphicon " data-toggle="modal" data-target=' + inviteNoMemberAddVideoToMyClipsF() + '    onclick="resetFormAddVideoModal()" >Add to My Clips </button>';
+                    var btnAddVideoToMyClips = '<button style="margin-right: 5px;" type="button" class="btn btn-danger btn-sm glyphicon " data-toggle="modal" data-target=' + inviteNoMemberAddVideoToMyClipsF() + '    onclick="resetFormAddVideoModal()" >Add to My Clips </button>';
 
-                    var btnAddMyRatingVideo = '<button style="margin-right: 5px;" type="button" class="btn btn-warning btn-sm glyphicon glyphicon-star-empty" data-toggle="modal" data-target=' + inviteNoMemberRating() + '    onclick="resetRatingsModal()" >Rate Video </button>';
+                    var btnAddMyRatingVideo = '<button style="margin-right: 5px;" type="button" class="btn btn-danger btn-sm glyphicon glyphicon-star-empty" data-toggle="modal" data-target=' + inviteNoMemberRating() + '    onclick="resetRatingsModal()" >Rate Video </button>';
 
                     //FORMAT video Item
-                    var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo + '<label class="name">' + FirstNameUploader + ' <br>Date video: ' + dateVideo + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="grey"class="modal-title"><strong>' + videoTitle + '</strong> <span style="color:rgb(0, 16, 70)"> Views:'+viewsVideo+'</span></h4></div>    <div class="modal-body"><h4>Category:</h4><p><h4>' + category + '<h4></p> <h4>Description:</h4> <blockquote> <h6>' + additionalDetails + '</h6></blockquote> <h4>' +"Video "+FirstNameUploader+ '</h4><blockquote>' + videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote>  </div>     <div class="modal-footer">    <!-- new Btn --> ' + btnAddMyRatingVideo + btnAddVideoToMyClips + '<button type="button" class="btn btn-default" data-dismiss="modal">Close Player</button>   </div></div></div></div> </label>    <div class="break"></div></li>';
+                    var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo + '<label class="name">' + FirstNameUploader + ' <br>Date video: ' + dateVideo + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="grey"class="modal-title"><strong>' + FirstNameUploader + '</strong> <span style="color:rgb(0, 160, 70)">Views.</span></h4></div>    <div class="modal-body"><h6>category</h6><blockquote>' + category + '</blockquote><h3>Clip</h3><blockquote>' + videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote><h6>' + additionalDetails + '</h6></div>     <div class="modal-footer">    <!-- new Btn --> ' + btnAddMyRatingVideo + btnAddVideoToMyClips + '<button type="button" class="btn btn-default" data-dismiss="modal">Closing player</button>   </div></div></div></div> </label>    <div class="break"></div></li>';
 
                     $('#mainpanecontentSearch').prepend(itemVideo);
 
@@ -203,12 +197,9 @@ function inviteNoMemberAddVideoToMyClipsF() {
     if (emailU == '"noemaildefined"' || emailU == "")
 
     {
-        
         return "#AddClipFromYouTubeNoDefined";
-        
 
     } else {
-       
         return "#AddClipFromYouTube";
     }
 }
@@ -220,7 +211,7 @@ function inviteSubscribe(videoid) {
     if (emailU == '"\"noemaildefined\"' || emailU != " ")
 
     {
-        alert("Please subscribe to enable more options! " + emailU + " to allow you rate this video: " + videoid);
+        alert("Please subscribe to enable more options!" + emailU + "to allow you rate this video: " + videoid);
 
     }
 
@@ -264,15 +255,7 @@ function resetRatingsModal() {
 
 //reset Form AddVideo in modal
 function resetFormAddVideoModal() {
-    
-    //validate subscriber
-    if(emailU == '"noemaildefined"' || emailU == ""){
-       alert("Please, subscribe to enable this feature! ");
-    
-      }
-    
-    //else
-    
+
     //$('input[name="optradio"]').prop('checked',false);
     $('input[name="languageClip"]').prop('checked', false);
 
@@ -383,11 +366,11 @@ $(document).ready(function () {
 
 
 
-                        var btnAddVideoToMyClips = '<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="inviteSubscribe(' + videoId + ')">Add To My Clips</button>  ';
+                        var btnAddVideoToMyClips = '<button type="button" class="btn btn-primary" data-dismiss="modal"   onclick="inviteSubscribe(' + videoId + ')">Add to My Clips</button>  ';
 
 
                         //FORMAT video Item
-                        var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo + '<label class="name">' + FirstNameUploader + ' <br>Date video: ' + dateVideo + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="gery"class="modal-title"><strong>' + FirstNameUploader + '</strong> <span style="color:rgb(0, 160, 70)">Views.</span></h4></div>    <div class="modal-body"><h6>category</h6><blockquote>' + category + '</blockquote><h3>Clip</h3><blockquote>' + videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote><h6>' + additionalDetails + '</h6></div>     <div class="modal-footer">    <!-- new Btn --> ' + btnAddVideoToMyClips + '<button type="button" class="btn btn-default" data-dismiss="modal">Close Player</button>   </div></div></div></div><a  class="btn btn-danger  btn-sm glyphicon glyphicon-trash" href="#" id="' + videoId + '" onclick="inviteSubscribe(' + videoId + ')" title="Remove Video"></a> </label>    <div class="break"></div></li>';
+                        var itemVideo = '<li href="#" class="list-group-item text-left"> ' + btnPlayVideo + '<label class="name">' + FirstNameUploader + ' <br>Date video: ' + dateVideo + '<h6>Category: ' + category + '</h6><br></label><label class="pull-right">    <!-- Modal Play video--><div class="modal fade" id="' + itemListID + '" role="dialog"><div class="modal-dialog">    <!-- Modal content--><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal">&times;</button><h4 font-color="gery"class="modal-title"><strong>' + FirstNameUploader + '</strong> <span style="color:rgb(0, 160, 70)">Views.</span></h4></div>    <div class="modal-body"><h6>category</h6><blockquote>' + category + '</blockquote><h3>Clip</h3><blockquote>' + videoFrame + '</blockquote><h6>Language</h6><blockquote>' + language + '</blockquote><h6>' + additionalDetails + '</h6></div>     <div class="modal-footer">    <!-- new Btn --> ' + btnAddVideoToMyClips + '<button type="button" class="btn btn-default" data-dismiss="modal">Closing player</button>   </div></div></div></div><a  class="btn btn-danger  btn-sm glyphicon glyphicon-trash" href="#" id="' + videoId + '" onclick="inviteSubscribe(' + videoId + ')" title="Remove Video"></a> </label>    <div class="break"></div></li>';
 
 
                         $('#mainpanecontentRecommend').prepend(itemVideo);
